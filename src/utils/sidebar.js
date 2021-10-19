@@ -1,6 +1,6 @@
 import Teams from '../components/Team';
 import Contact from '../components/Contact';
-import Courses from '../components/Course';
+import Courses from '../components/Courses';
 import Dashboard from '../components/Dashboard';
 
 export const Routes = [

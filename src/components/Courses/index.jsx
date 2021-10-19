@@ -1,6 +1,5 @@
 import React from 'react';
 const Courses = () => {
-  return <div>courses</div>;
+  return <div>Courses</div>;
 };
-
 export default Courses;
