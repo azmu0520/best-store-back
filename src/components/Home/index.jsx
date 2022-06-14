@@ -8,6 +8,7 @@ import Project from './Project';
 import Result from './Result';
 import { Wrap } from './style';
 import Team from './Team';
+import Privileges from './Privileges';
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Opener />
       <Less />
       <Advantage />
+      <Privileges />
       <Result />
       <Team />
       <Partner />
