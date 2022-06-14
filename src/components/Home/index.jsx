@@ -9,6 +9,7 @@ import Result from './Result';
 import { Wrap } from './style';
 import Team from './Team';
 import Privileges from './Privileges';
+// import Future from './Future';
 
 const Home = () => {
   return (

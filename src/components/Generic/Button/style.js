@@ -18,4 +18,5 @@ export const Wrap = styled.div`
     shadow ? shadow : '0px 7px 12px rgba(32, 81, 137, 0.24)'};
 
   cursor: pointer;
+  white-space: nowrap;
 `;
