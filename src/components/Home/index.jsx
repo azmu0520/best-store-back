@@ -2,7 +2,12 @@ import React from 'react';
 import Advantage from './Advantage';
 import Less from './Less';
 import Opener from './Opener';
+import About from './About';
+import Partner from './Partner';
+import Project from './Project';
+import Result from './Result';
 import { Wrap } from './style';
+import Team from './Team';
 
 const Home = () => {
   return (
@@ -10,6 +15,11 @@ const Home = () => {
       <Opener />
       <Less />
       <Advantage />
+      <Result />
+      <Team />
+      <Partner />
+      <Project />
+      <About />
     </Wrap>
   );
 };
