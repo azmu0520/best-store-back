@@ -3,6 +3,8 @@ import { Wrap } from './style';
 import logo from '../../assets/imgs/logo.png';
 import { data } from '../../utilits/navbar';
 import { NavLink, Outlet } from 'react-router-dom';
+import Footer from '../Footer';
+
 const Navbar = () => {
   return (
     <>
@@ -27,7 +29,9 @@ const Navbar = () => {
           </Wrap.Links>
         </Wrap.Wrap>
       </Wrap>
+
       <Outlet />
+      <Footer />
     </>
   );
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../components/Home';
 import Navbar from '../components/Navbar';
+import NotFound from '../components/NotFound';
 import { data } from '../utilits/navbar';
 const Root = () => {
   return (
@@ -12,7 +13,7 @@ const Root = () => {
         ))}
         <Route path='/' element={<Home />} />
       </Route>
-      <Route path={'*'} element={<div>you are lost</div>} />
+      <Route path={'*'} element={<NotFound />} />
     </Routes>
   );
 };

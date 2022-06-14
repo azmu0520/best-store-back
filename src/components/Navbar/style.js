@@ -73,4 +73,12 @@ Wrap.Btn = styled.div`
   border: 1px solid #eff2f7;
   border-radius: 8px;
 `;
-export { Wrap };
+
+const Container = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+`
+
+export { Wrap , Container};
+

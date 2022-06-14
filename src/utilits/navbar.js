@@ -1,3 +1,4 @@
+import Course from '../components/Course';
 import Generic from '../components/Generic';
 import Home from '../components/Home';
 
@@ -12,7 +13,7 @@ export const data = [
     id: 2,
     title: 'Kurslarimiz',
     path: '/courses',
-    Component: Generic,
+    Component: Course,
   },
   {
     id: 3,
