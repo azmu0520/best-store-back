@@ -8,7 +8,7 @@ const Root = () => {
     <Routes>
       <Route element={<Navbar />}>
         {data?.map(({ id, path, Component }) => (
-          <Route path={path} element={<Component />} />
+          <Route key={id} path={path} element={<Component />} />
         ))}
         <Route path='/' element={<Home />} />
       </Route>

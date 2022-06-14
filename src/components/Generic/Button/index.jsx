@@ -7,6 +7,7 @@ const Button = ({
   background,
   size,
   color,
+  border,
   radius,
   padding,
   margin,
@@ -19,6 +20,7 @@ const Button = ({
       height={height}
       background={background}
       size={size}
+      border={border}
       color={color}
       radius={radius}
       padding={padding}
