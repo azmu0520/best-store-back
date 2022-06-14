@@ -6,7 +6,7 @@ export const Wrap = styled.div`
   background: #fff;
 `;
 Wrap.Wrap = styled.div`
-  max-width: 860px;
+  max-width: 1300px;
   margin: 0 auto;
 `;
 Wrap.Text = styled.div`
@@ -38,8 +38,9 @@ Wrap.Descript = styled.div`
 Wrap.CardWrap = styled.div`
   display: flex;
   align-items: center;
-  height: 580px;
-  margin-top: 50px;
+  height: 590px;
+  width: 100%;
+  margin: 50px 0;
   background: #ffffff;
   border: 1px solid #8a90a5;
   border-radius: 11px;
