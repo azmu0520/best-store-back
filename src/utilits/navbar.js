@@ -1,6 +1,7 @@
 import Course from '../components/Course';
 import Generic from '../components/Generic';
 import Home from '../components/Home';
+import Team from '../components/Team';
 
 export const data = [
   {
@@ -26,5 +27,11 @@ export const data = [
     title: 'Biz haqimizda',
     path: '/about',
     Component: Generic,
+  },
+  {
+    id: 5,
+    title: 'Jamoa',
+    path: '/team',
+    Component: Team,
   },
 ];

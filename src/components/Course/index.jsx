@@ -1,19 +1,17 @@
 import React from 'react';
+import GenericTeamCard from '../Generic/TeamCard';
 import About from '../Home/About';
-import Team from '../Home/Team';
 import Approach from './Approach';
 import Question from './Question';
-import TeachingProcess from './TeachingProcess';
 
 export const Course = () => {
   return (
-    <div>
-      <Team />
-      <TeachingProcess />
+    <>
+      <GenericTeamCard home={true} />
       <Approach />
       <Question />
       <About />
-    </div>
+    </>
   );
 };
 
