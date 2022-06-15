@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { ReactComponent as Arrow } from '../../../assets/icons/arrow.svg';
 import { ReactComponent as Github } from '../../../assets/icons/github.svg';
+import { ReactComponent as Safe } from '../../../assets/icons/safe.svg';
 export const Wrap = styled.div`
   background: #f8fafc;
   height: 90vh;
@@ -38,7 +39,7 @@ Wrap.Btns = styled.div`
   align-items: center;
   justify-content: center;
   margin: 60px auto;
-  padding-bottom: 110px;
+  padding-bottom: 60px;
 `;
 Wrap.Github = styled(Github)`
   margin-right: 10px;
@@ -47,5 +48,40 @@ Wrap.Arrow = styled(Arrow)`
   margin-left: 14px;
   path {
     fill: #fff;
+  }
+`;
+
+Wrap.Safe = styled(Safe)`
+  margin-right: 14px;
+`;
+
+Wrap.Special = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  box-sizing: border-box;
+  justify-content: center;
+  padding: 17px 30px;
+  width: 290px;
+  height: 90px;
+  background: #f4fff4;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+`;
+
+Wrap.SafeText = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #70c63b;
+  span {
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+    color: #323a56;
+
+    margin-bottom: 6px;
   }
 `;

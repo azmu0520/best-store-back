@@ -26,6 +26,13 @@ const Opener = () => {
             Github
           </Button>
         </Wrap.Btns>
+        <Wrap.Special>
+          <Wrap.Safe />
+          <Wrap.SafeText>
+            <span>GitNation React Award</span>
+            Most Impactful Project to the Community
+          </Wrap.SafeText>
+        </Wrap.Special>
       </Wrap.Wrap>
     </Wrap>
   );

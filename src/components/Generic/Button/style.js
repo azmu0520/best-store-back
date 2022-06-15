@@ -14,9 +14,9 @@ export const Wrap = styled.div`
   padding: ${({ padding }) => (padding ? padding : '20px 40px')};
   border: ${({ border }) => (border ? border : '')};
   margin: ${({ margin }) => (margin ? margin : '')};
-  box-shadow: ${({ shadow }) =>
-    shadow ? shadow : '0px 7px 12px rgba(32, 81, 137, 0.24)'};
-
+  box-shadow: ${({ shadow }) => (shadow ? shadow : '')};
+  :hover {
+  }
   cursor: pointer;
   white-space: nowrap;
 `;
