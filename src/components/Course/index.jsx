@@ -10,11 +10,11 @@ export const Course = () => {
   return (
     <Wrap>
       <Courses />
-      {/* <GenericTeamCard home={true} /> */}
+      <GenericTeamCard home={true} />
       {/* <TeachingProcess /> */}
-      {/* <Approach />
+      <Approach />
       <Question />
-      <About /> */}
+      <About />
     </Wrap>
   );
 };

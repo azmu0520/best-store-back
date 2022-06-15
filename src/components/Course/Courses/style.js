@@ -34,7 +34,6 @@ Wrap.Descript = styled.div`
   font-weight: 400;
   font-size: 20px;
   line-height: 29px;
-  /* padding: 0 330px; */
   max-width: 450px;
   text-align: center;
   color: #8a90a5;
@@ -84,7 +83,6 @@ Wrap.Card = styled.div`
     box-shadow: 0px 10px 16px rgba(32, 81, 137, 0.06);
   }
   transition: all 1 ease;
-  /* box-sizing: initial; */
 `;
 
 Wrap.VsCode = styled(VsCode)`
