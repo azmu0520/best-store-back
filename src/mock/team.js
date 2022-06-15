@@ -11,6 +11,7 @@ export const teamData = [
     phone: '(99) 108 24 66',
     email: 'bilan6436@gmail.com',
     location: 'Toshkent sh, Yunusobod 13-daha, 61-uy',
+    isHome: true,
     link: {
       github: 'https//',
       instagram: 'https//',
@@ -28,6 +29,8 @@ export const teamData = [
     phone: '(99) 108 24 66',
     email: 'bilan6436@gmail.com',
     location: 'Toshkent sh, Yunusobod 13-daha, 61-uy',
+    isHome: true,
+
     link: {
       github: 'https//',
       instagram: 'https//',
@@ -45,6 +48,8 @@ export const teamData = [
     phone: '(99) 108 24 66',
     email: 'bilan6436@gmail.com',
     location: 'Toshkent sh, Yunusobod 13-daha, 61-uy',
+    isHome: true,
+
     link: {
       github: 'https//',
       instagram: 'https//',
@@ -54,6 +59,212 @@ export const teamData = [
   },
   {
     id: 4,
+    url: img,
+    fullname: 'Azizbek Muhtorov',
+    job: 'Frontend developer',
+    descr:
+      'Eric was always fascinated by tecnology. He studied computing at an early age and started his tecnology consulting business in college. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra lectus laoreet in in pretium non.',
+    phone: '(99) 108 24 66',
+    email: 'bilan6436@gmail.com',
+    location: 'Toshkent sh, Yunusobod 13-daha, 61-uy',
+    isHome: true,
+
+    link: {
+      github: 'https//',
+      instagram: 'https//',
+      telegram: 'https//',
+      linkedIN: 'https//',
+    },
+  },
+  {
+    id: 5,
+    url: img,
+    fullname: 'Sardorbek Muhtorov',
+    job: 'Frontend developer',
+    descr:
+      'Eric was always fascinated by tecnology. He studied computing at an early age and started his tecnology consulting business in college. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra lectus laoreet in in pretium non.',
+    phone: '(99) 108 24 66',
+    email: 'bilan6436@gmail.com',
+    location: 'Toshkent sh, Yunusobod 13-daha, 61-uy',
+    link: {
+      github: 'https//',
+      instagram: 'https//',
+      telegram: 'https//',
+      linkedIN: 'https//',
+    },
+  },
+  {
+    id: 6,
+    url: img,
+    fullname: 'Azizbek Muhtorov',
+    job: 'Frontend developer',
+    descr:
+      'Eric was always fascinated by tecnology. He studied computing at an early age and started his tecnology consulting business in college. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra lectus laoreet in in pretium non.',
+    phone: '(99) 108 24 66',
+    email: 'bilan6436@gmail.com',
+    location: 'Toshkent sh, Yunusobod 13-daha, 61-uy',
+    link: {
+      github: 'https//',
+      instagram: 'https//',
+      telegram: 'https//',
+      linkedIN: 'https//',
+    },
+  },
+  {
+    id: 7,
+    url: img,
+    fullname: 'Azizbek Muhtorov',
+    job: 'Frontend developer',
+    descr:
+      'Eric was always fascinated by tecnology. He studied computing at an early age and started his tecnology consulting business in college. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra lectus laoreet in in pretium non.',
+    phone: '(99) 108 24 66',
+    email: 'bilan6436@gmail.com',
+    location: 'Toshkent sh, Yunusobod 13-daha, 61-uy',
+    link: {
+      github: 'https//',
+      instagram: 'https//',
+      telegram: 'https//',
+      linkedIN: 'https//',
+    },
+  },
+  {
+    id: 8,
+    url: img,
+    fullname: 'Azizbek Muhtorov',
+    job: 'Frontend developer',
+    descr:
+      'Eric was always fascinated by tecnology. He studied computing at an early age and started his tecnology consulting business in college. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra lectus laoreet in in pretium non.',
+    phone: '(99) 108 24 66',
+    email: 'bilan6436@gmail.com',
+    location: 'Toshkent sh, Yunusobod 13-daha, 61-uy',
+    link: {
+      github: 'https//',
+      instagram: 'https//',
+      telegram: 'https//',
+      linkedIN: 'https//',
+    },
+  },
+  {
+    id: 10,
+    url: img,
+    fullname: 'Sardorbek Muhtorov',
+    job: 'Frontend developer',
+    descr:
+      'Eric was always fascinated by tecnology. He studied computing at an early age and started his tecnology consulting business in college. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra lectus laoreet in in pretium non.',
+    phone: '(99) 108 24 66',
+    email: 'bilan6436@gmail.com',
+    location: 'Toshkent sh, Yunusobod 13-daha, 61-uy',
+    link: {
+      github: 'https//',
+      instagram: 'https//',
+      telegram: 'https//',
+      linkedIN: 'https//',
+    },
+  },
+  {
+    id: 11,
+    url: img,
+    fullname: 'Azizbek Muhtorov',
+    job: 'Frontend developer',
+    descr:
+      'Eric was always fascinated by tecnology. He studied computing at an early age and started his tecnology consulting business in college. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra lectus laoreet in in pretium non.',
+    phone: '(99) 108 24 66',
+    email: 'bilan6436@gmail.com',
+    location: 'Toshkent sh, Yunusobod 13-daha, 61-uy',
+    link: {
+      github: 'https//',
+      instagram: 'https//',
+      telegram: 'https//',
+      linkedIN: 'https//',
+    },
+  },
+  {
+    id: 12,
+    url: img,
+    fullname: 'Azizbek Muhtorov',
+    job: 'Frontend developer',
+    descr:
+      'Eric was always fascinated by tecnology. He studied computing at an early age and started his tecnology consulting business in college. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra lectus laoreet in in pretium non.',
+    phone: '(99) 108 24 66',
+    email: 'bilan6436@gmail.com',
+    location: 'Toshkent sh, Yunusobod 13-daha, 61-uy',
+    link: {
+      github: 'https//',
+      instagram: 'https//',
+      telegram: 'https//',
+      linkedIN: 'https//',
+    },
+  },
+  {
+    id: 13,
+    url: img,
+    fullname: 'Azizbek Muhtorov',
+    job: 'Frontend developer',
+    descr:
+      'Eric was always fascinated by tecnology. He studied computing at an early age and started his tecnology consulting business in college. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra lectus laoreet in in pretium non.',
+    phone: '(99) 108 24 66',
+    email: 'bilan6436@gmail.com',
+    location: 'Toshkent sh, Yunusobod 13-daha, 61-uy',
+    link: {
+      github: 'https//',
+      instagram: 'https//',
+      telegram: 'https//',
+      linkedIN: 'https//',
+    },
+  },
+  {
+    id: 14,
+    url: img,
+    fullname: 'Sardorbek Muhtorov',
+    job: 'Frontend developer',
+    descr:
+      'Eric was always fascinated by tecnology. He studied computing at an early age and started his tecnology consulting business in college. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra lectus laoreet in in pretium non.',
+    phone: '(99) 108 24 66',
+    email: 'bilan6436@gmail.com',
+    location: 'Toshkent sh, Yunusobod 13-daha, 61-uy',
+    link: {
+      github: 'https//',
+      instagram: 'https//',
+      telegram: 'https//',
+      linkedIN: 'https//',
+    },
+  },
+  {
+    id: 15,
+    url: img,
+    fullname: 'Azizbek Muhtorov',
+    job: 'Frontend developer',
+    descr:
+      'Eric was always fascinated by tecnology. He studied computing at an early age and started his tecnology consulting business in college. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra lectus laoreet in in pretium non.',
+    phone: '(99) 108 24 66',
+    email: 'bilan6436@gmail.com',
+    location: 'Toshkent sh, Yunusobod 13-daha, 61-uy',
+    link: {
+      github: 'https//',
+      instagram: 'https//',
+      telegram: 'https//',
+      linkedIN: 'https//',
+    },
+  },
+  {
+    id: 16,
+    url: img,
+    fullname: 'Azizbek Muhtorov',
+    job: 'Frontend developer',
+    descr:
+      'Eric was always fascinated by tecnology. He studied computing at an early age and started his tecnology consulting business in college. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra lectus laoreet in in pretium non.',
+    phone: '(99) 108 24 66',
+    email: 'bilan6436@gmail.com',
+    location: 'Toshkent sh, Yunusobod 13-daha, 61-uy',
+    link: {
+      github: 'https//',
+      instagram: 'https//',
+      telegram: 'https//',
+      linkedIN: 'https//',
+    },
+  },
+  {
+    id: 17,
     url: img,
     fullname: 'Azizbek Muhtorov',
     job: 'Frontend developer',

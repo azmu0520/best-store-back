@@ -11,6 +11,7 @@ export const Container = styled.div`
     .icons {
       width: 20px;
       height: 20px;
+     
     }
   }
   @media (max-width: 420px) {
