@@ -16,8 +16,8 @@ const Home = () => {
   return (
     <Wrap>
       <Opener />
-      {/* <Mentor /> */}
       <Less />
+      {/* <Mentor /> */}
       <Advantage />
       <Privileges />
       <Result />

@@ -4,7 +4,9 @@ import { ReactComponent as Github } from '../../../assets/icons/github.svg';
 import { ReactComponent as Safe } from '../../../assets/icons/safe.svg';
 export const Wrap = styled.div`
   background: #f8fafc;
-  height: 90vh;
+  /* height: 90vh; */
+  padding: 23px;
+  box-sizing: border-box;
 `;
 Wrap.Wrap = styled.div`
   max-width: 860px;
@@ -23,6 +25,16 @@ Wrap.Text = styled.div`
   span {
     color: #1d72d2;
   }
+  @media (max-width: 1000px) {
+    font-size: 30px;
+    line-height: 36px;
+    color: #1d72d2;
+    padding-top: 80px;
+
+    span {
+      color: #323a56;
+    }
+  }
 `;
 
 Wrap.Descript = styled.div`
@@ -32,6 +44,12 @@ Wrap.Descript = styled.div`
   text-align: center;
   color: #8a90a5;
   margin-top: 28px;
+
+  @media (max-width: 1000px) {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 16px;
+  }
 `;
 
 Wrap.Btns = styled.div`
@@ -40,6 +58,12 @@ Wrap.Btns = styled.div`
   justify-content: center;
   margin: 60px auto;
   padding-bottom: 60px;
+
+  @media (max-width: 1000px) {
+    margin: 40px auto 10px auto;
+    flex-direction: column;
+    /* padding-bottom: 40px; */
+  }
 `;
 Wrap.Github = styled(Github)`
   margin-right: 10px;

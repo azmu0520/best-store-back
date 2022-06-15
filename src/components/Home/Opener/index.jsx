@@ -13,14 +13,14 @@ const Opener = () => {
           muddatda istalgan dasturlash sohasida Junior darajasiga chiqa olasiz!
         </Wrap.Descript>
         <Wrap.Btns>
-          <Button margin='0 16px 0  0'>
+          <Button margin='0 16px 20px  0'>
             Boshlash <Wrap.Arrow />
           </Button>
           <Button
             border='1px solid #EFF2F7'
             background={'#EFF2F7'}
             color='#323A56'
-            width={'176px'}
+            // width={'176px'}
           >
             <Wrap.Github />
             Github
