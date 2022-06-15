@@ -34,4 +34,10 @@ export const data = [
     path: '/team',
     Component: Team,
   },
+  {
+    id: 6,
+    title: 'Bog’lanish',
+    path: '/contact',
+    Component: Generic,
+  },
 ];

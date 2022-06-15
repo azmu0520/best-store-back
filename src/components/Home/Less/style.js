@@ -15,12 +15,19 @@ Wrap.Text = styled.div`
   font-weight: 700;
   font-size: 54px;
   line-height: 75px;
-  text-align: center;
   color: #323a56;
-
+  text-align: center;
+  max-width: 233px;
+  width: 100%;
+  margin: 0 auto;
   padding-top: 100px;
   span {
     color: #1d72d2;
+  }
+  @media (max-width: 1000px) {
+    font-size: 28px;
+    line-height: 34px;
+    padding-top: 80px;
   }
 `;
 
@@ -33,18 +40,32 @@ Wrap.Descript = styled.div`
   color: #8a90a5;
   margin: 0 auto;
   margin-top: 28px;
+  padding: 0 30px;
+  @media (max-width: 1000px) {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 16px;
+  }
 `;
 
 Wrap.CardWrap = styled.div`
   display: flex;
   align-items: center;
   height: 590px;
-  width: 100%;
-  margin: 50px 0;
+  margin: 50px auto;
+  box-sizing: border-box;
   background: #ffffff;
   border: 1px solid #8a90a5;
   border-radius: 11px;
   border-top-left-radius: 10px;
+  @media (max-width: 1360px) {
+    margin: 40px 20px;
+  }
+  @media (max-width: 800px) {
+    margin: 40px auto;
+    width: 84%;
+    flex-direction: column;
+  }
 `;
 
 Wrap.Card = styled.div`
@@ -59,8 +80,17 @@ Wrap.Card = styled.div`
       rgba(32, 81, 137, 0.22)
     ),
     url(${img});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  @media (max-width: 800px) {
+    width: 100%;
+    height: 400px;
+
+    border-radius: 8px 8px 0px 0px;
+  }
 `;
 
 Wrap.Play = styled(Play)`
@@ -89,6 +119,7 @@ export const Status = styled.div`
   background-color: #fff;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  padding: 20px;
 `;
 
 Status.Card = styled.div`

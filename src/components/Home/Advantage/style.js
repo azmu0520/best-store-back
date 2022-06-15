@@ -3,6 +3,7 @@ import { ReactComponent as Moon } from '../../../assets/icons/moon.svg';
 export const Wrap = styled.div`
   background: #f8fafc;
   /* height: 90vh; */
+  width: 100%;
 `;
 Wrap.Wrap = styled.div`
   max-width: 1400px;
@@ -19,6 +20,11 @@ Wrap.Text = styled.div`
   color: #323a56;
 
   padding-top: 100px;
+  @media (max-width: 1000px) {
+    font-size: 28px;
+    padding-top: 80px;
+    line-height: 34px;
+  }
   span {
     color: #1d72d2;
   }
@@ -31,6 +37,11 @@ Wrap.Descript = styled.div`
   text-align: center;
   color: #8a90a5;
   margin-top: 28px;
+  @media (max-width: 1000px) {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 16px;
+  }
 `;
 
 Wrap.Moon = styled(Moon)`
@@ -58,7 +69,7 @@ Wrap.CardText = styled.div`
 
 Wrap.Card = styled.div`
   background: #ffffff;
-  width: 400px;
+  max-width: fit-content;
   height: 270px;
   border: 1px solid #eff2f7;
   border-radius: 12px;
@@ -68,8 +79,23 @@ Wrap.Card = styled.div`
 
 Wrap.CardWrap = styled.div`
   display: grid;
+  max-width: 1400px;
+  margin: 0 auto;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-row-gap: 40px;
+  grid-gap: 40px;
   margin-top: 50px;
   padding-bottom: 70px;
+
+  @media (max-width: 1400px) {
+    grid-template-columns: 1fr 1fr;
+    max-width: 900px;
+    grid-gap: 20px;
+  }
+  @media (max-width: 940px) {
+    max-width: 500px;
+    grid-template-columns: 1fr;
+  }
+  @media (max-width: 570px) {
+    margin: 40px 20px;
+  }
 `;

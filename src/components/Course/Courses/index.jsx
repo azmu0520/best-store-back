@@ -16,7 +16,7 @@ const Courses = () => {
         </Wrap.Descript>
         <Wrap.Cards>
           {count.map((item) => (
-            <Wrap.Card>
+            <Wrap.Card key={item}>
               <Wrap.Icons>
                 <Wrap.VsCode /> <Wrap.Top>TOP</Wrap.Top>
               </Wrap.Icons>
