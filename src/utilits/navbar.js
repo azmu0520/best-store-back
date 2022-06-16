@@ -1,7 +1,7 @@
 import Blog from '../components/Blog';
 import Course from '../components/Course';
-import Generic from '../components/Generic';
 import Home from '../components/Home';
+import Contact from '../components/Home/Contact';
 import Team from '../components/Team';
 
 export const data = [
@@ -34,7 +34,8 @@ export const data = [
     id: 5,
     title: "Bog'lanish",
     path: '/contact',
-    Component: Generic,
+    Component: Contact,
     hidden: true,
+ 
   },
 ];
