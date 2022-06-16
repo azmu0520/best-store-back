@@ -1,21 +1,24 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { teamData } from '../../../mock/team';
-import { Button, Card, Container, Wrap, WrapGrid } from './style';
+import { Card, Container, Wrap, WrapGrid } from './style';
+import { useNavigate } from 'react-router-dom';
+import Button from '../Button';
 
-export const GenericTeamCard = ({ hide, home }) => {
+const GenericTeamCard = ({ hide, home }) => {
+  const navigate = useNavigate();
   return (
     <Container>
       <Wrap>
-        <Container.Header>
+        <Container.Header className='header'>
           Bizning professional <span className='span'>jamoamiz</span>
         </Container.Header>
-        <Container.Text>
+        <Container.Text className='text'>
           A collection of websites and projects built with Webbrain UI
         </Container.Text>
-        <Button hide={hide}>
+        <Button onClick={() => navigate('/team')} hide={hide} width={'241px'}>
           Ko‘proq ko‘rish
-          <Button.Arrow />
+          <Wrap.Arrow />
         </Button>
 
         <WrapGrid>

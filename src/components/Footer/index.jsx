@@ -9,10 +9,10 @@ import {
   TelegramCon,
 } from './style';
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <Container>
-      <Box>
+      <Box className='main'>
         <Box.Logo />
         <Box.Descr>Istiklal street, Tashkent, Uzbekistan, 200136</Box.Descr>
         <Flexing>
@@ -20,7 +20,7 @@ export const Footer = () => {
             <Flexing.Facebook className='icons' />
           </Circle>
           <Circle className='circle'>
-            <Flexing.Instagram className='icons-ins' />
+            <Flexing.Instagram className='icons' />
           </Circle>
           <Circle className='circle'>
             <Flexing.Twitter className='icons' />
@@ -42,9 +42,11 @@ export const Footer = () => {
         );
       })}
 
-      <Box>
-        <Box.Title>Subscribe</Box.Title>
-        <Box.Descr>Subscribe to get the latest news from us</Box.Descr>
+      <Box className='input'>
+        <Box.Title className='none'>Subscribe</Box.Title>
+        <Box.Descr className='none'>
+          Subscribe to get the latest news from us
+        </Box.Descr>
 
         {/* input */}
         <InputCon>

@@ -4,17 +4,17 @@ import { CollapseStyle, Container, Div, Flexing, Wrap } from './style';
 
 const { Panel } = CollapseStyle;
 
-export const Question = () => {
+const Question = () => {
   const onChange = (key) => {
     console.log(key);
   };
 
   return (
     <Container>
-      <Container.Header>
+      <Container.Header className='header'>
         Ko‘p beriladigan <span className='span'>savollarga javoblar</span>
       </Container.Header>
-      <Container.Text>
+      <Container.Text className='text'>
         Quyida bizning ustun jihatlarimiz bilan tanishing
       </Container.Text>
 

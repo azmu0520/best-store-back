@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { ReactComponent as dowland } from '../../../assets/icons/dowland.svg';
 
-export const Container = styled.div`
+const Container = styled.div`
   background: #1d72d2;
   padding: 60px 0px;
   @media (max-width: 1400px) {
@@ -11,7 +10,6 @@ export const Container = styled.div`
     .icons {
       width: 20px;
       height: 20px;
-     
     }
   }
   @media (max-width: 420px) {
@@ -19,7 +17,7 @@ export const Container = styled.div`
   }
 `;
 
-export const WrapCon = styled.div`
+const WrapCon = styled.div`
   max-width: 1400px;
   width: 100%;
   margin: auto;
@@ -62,7 +60,7 @@ Container.Text = styled.div`
   }
 `;
 
-export const Wrap = styled.div`
+const Wrap = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
@@ -78,7 +76,7 @@ export const Wrap = styled.div`
   }
 `;
 
-export const Box = styled.div`
+const Box = styled.div`
   border-left: 2px solid #ecc744;
   padding-left: 30px;
   @media (max-width: 600px) {
@@ -98,12 +96,10 @@ Box.Count = styled.div`
   }
 `;
 
-export const Flexing = styled.div`
+const Flexing = styled.div`
   display: flex;
   align-items: center;
 `;
-
-Flexing.Icons = styled(dowland)``;
 
 Flexing.Text = styled.div`
   font-style: normal;
@@ -117,3 +113,5 @@ Flexing.Text = styled.div`
     line-height: 19px;
   }
 `;
+
+export { Container, Wrap, WrapCon, Flexing, Box };

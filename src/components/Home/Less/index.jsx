@@ -8,13 +8,15 @@ const Less = () => {
   return (
     <Wrap>
       <Wrap.Wrap>
-        <Wrap.Text>
-          Kam vaqtda <span> ko‘proq o‘rganish </span>
-        </Wrap.Text>
-        <Wrap.Descript>
+        <Wrap.Header className='header'>
+          Kam vaqtda <span className='span'>ko‘proq o‘rganish </span>
+        </Wrap.Header>
+        <Wrap.Text className='text'>
           Webbrain akademiyasida juda qisqa muddatda istalgan dasturlash
           sohasida Junior darajasiga chiqa olasiz
-        </Wrap.Descript>
+        </Wrap.Text>
+
+        {/* Wrap Card */}
         <Wrap.CardWrap>
           <Wrap.Card>
             <Wrap.PlayCover>
@@ -25,7 +27,7 @@ const Less = () => {
             <Status.Card>
               <Status.Img src={img} />
               <Status.Plus>
-                <span> PLUS</span>
+                <span className='span'> PLUS</span>
                 VERIFIED CAPE TOWN
               </Status.Plus>
               <Status.Title>Modern, Chic Penthouse</Status.Title>

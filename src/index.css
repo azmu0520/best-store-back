@@ -14,6 +14,24 @@ code {
     monospace;
 }
 
-.span {
+.header span {
   color: #1d72d2;
+}
+
+.header {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 65px;
+  text-align: center;
+  color: #323a56;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+  text-align: center;
+  color: #8a90a5;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Circle, Container, Div, Flexing, Wrap } from './style';
 
-export const Partner = () => {
+const Partner = () => {
   return (
     <Container>
       <Wrap>
