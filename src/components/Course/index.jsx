@@ -10,7 +10,6 @@ export const Course = () => {
     <>
       <GenericTeamCard home={true} />
       <Courses />
-      {/* <TeachingProcess /> */}
       <Approach />
       <Question />
       <About />
