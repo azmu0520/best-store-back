@@ -2,7 +2,7 @@ import React from 'react';
 import { resultData } from '../../../mock/result';
 import { Box, Container, Flexing, Wrap, WrapCon } from './style';
 
-export const Result = () => {
+const Result = () => {
   return (
     <Container>
       <WrapCon>

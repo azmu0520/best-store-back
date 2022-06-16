@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Root from './root';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import MainContext from './context';
+
+const queryClient = new QueryClient();
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
-      <Root />
-    </Router>
+    <MainContext>
+      <Router>
+        <QueryClientProvider client={queryClient}>
+          <Root />
+        </QueryClientProvider>
+      </Router>
+    </MainContext>
   </React.StrictMode>
 );

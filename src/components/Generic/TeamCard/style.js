@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+
+// icons
 import { ReactComponent as Arrow } from '../../../assets/icons/arrow.svg';
 
-export const Container = styled.div`
+const Container = styled.div`
   padding: 85px 0px 50px 0px;
   background: #f8fafc;
   @media (max-width: 1400px) {
@@ -14,7 +16,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Wrap = styled.div`
+const Wrap = styled.div`
   max-width: 1400px;
   width: 100%;
   margin: auto;
@@ -24,12 +26,6 @@ export const Wrap = styled.div`
 `;
 
 Container.Header = styled.div`
-  font-style: normal;
-  font-weight: 700;
-  font-size: 54px;
-  line-height: 65px;
-  text-align: center;
-  color: #323a56;
   @media (max-width: 1400px) {
     font-size: 40px;
     width: 50%;
@@ -48,12 +44,6 @@ Container.Header = styled.div`
 `;
 
 Container.Text = styled.div`
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 29px;
-  text-align: center;
-  color: #8a90a5;
   margin: 16px 0px 40px 0px;
   @media (max-width: 600px) {
     font-size: 16px;
@@ -62,34 +52,14 @@ Container.Text = styled.div`
   }
 `;
 
-export const Button = styled.div`
-  width: 241px;
-  height: 64px;
-  background: #1d72d2;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
-  color: #ffffff;
-  display: ${({ hide }) => hide && 'none'};
-  cursor: pointer;
-  :active {
-    transform: scale(0.98);
-  }
-`;
-
-Button.Arrow = styled(Arrow)`
+Wrap.Arrow = styled(Arrow)`
   path {
     fill: white;
   }
   margin-left: 14px;
 `;
 
-export const WrapGrid = styled.div`
+const WrapGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
@@ -104,7 +74,7 @@ export const WrapGrid = styled.div`
   }
 `;
 
-export const Card = styled.div`
+const Card = styled.div`
   padding-bottom: 30px;
   border: 1px solid #eff2f7;
   border-radius: 12px;
@@ -140,3 +110,5 @@ Card.Job = styled.div`
   text-align: center;
   color: #8a90a5;
 `;
+
+export { Container, Wrap, WrapGrid, Card };

@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+
+// icons
 import { ReactComponent as partner } from '../../../assets/icons/partner.svg';
 import { ReactComponent as google } from '../../../assets/icons/google.svg';
 import profile from '../../../assets/imgs/profile2.webp';
 
-export const Container = styled.div`
+const Container = styled.div`
   background: #1d72d2;
   padding: 60px 0px 80px 0px;
   margin: 100px 0px;
@@ -17,7 +19,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Wrap = styled.div`
+const Wrap = styled.div`
   max-width: 1400px;
   width: 100%;
   display: flex;
@@ -78,7 +80,7 @@ Container.SubTitle = styled.div`
 `;
 
 // Box
-export const Box = styled.div`
+const Box = styled.div`
   width: 600px;
   padding: 25px 28px;
   background: #ffffff;
@@ -95,7 +97,7 @@ export const Box = styled.div`
   }
 `;
 
-export const Div = styled.div`
+const Div = styled.div`
   display: flex;
 `;
 
@@ -146,7 +148,7 @@ Box.Button = styled.div`
 `;
 
 // Flexing bottom
-export const Flexing = styled.div`
+const Flexing = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
@@ -156,7 +158,7 @@ export const Flexing = styled.div`
   }
 `;
 
-export const Circle = styled.div`
+const Circle = styled.div`
   background: #ffffff;
   box-shadow: 0px 10px 16px rgba(32, 81, 137, 0.06);
   width: 80px;
@@ -179,3 +181,5 @@ Flexing.Profile = styled.img.attrs({
   height: 80px;
   border-radius: 50%;
 `;
+
+export { Box, Circle, Container, Div, Flexing, Wrap };
