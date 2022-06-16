@@ -51,7 +51,7 @@ const Navbar = () => {
       </Wrap>
 
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
