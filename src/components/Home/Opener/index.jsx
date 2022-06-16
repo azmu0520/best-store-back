@@ -7,8 +7,7 @@ const Opener = () => {
     <Wrap>
       <Wrap.Wrap>
         <Wrap.Header className='header'>
-          <span className='span'>Dasturlashni</span> biz bilan qulay muhitda
-          o‘rganing
+          <span>Dasturlashni</span> biz bilan qulay muhitda o‘rganing
         </Wrap.Header>
         <Wrap.Text className='text'>
           Webbrain - bu siz izlagan akademiya bo’lib, unda siz juda qisqa

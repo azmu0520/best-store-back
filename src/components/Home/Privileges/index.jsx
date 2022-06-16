@@ -6,7 +6,7 @@ const Privileges = () => {
   return (
     <Container>
       <Container.Header className='header'>
-        <span className='span'>Imtiyozlar</span> kimlarga beriladi?
+        <span>Imtiyozlar</span> kimlarga beriladi?
       </Container.Header>
       <Container.Text className='text'>
         A collection of websites and projects built with Webbrain UI

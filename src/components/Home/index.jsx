@@ -8,7 +8,6 @@ import Project from './Project';
 import Result from './Result';
 import { Wrap } from './style';
 import Team from './Team';
-import Mentor from '../Generic/Mentor';
 import Privileges from './Privileges';
 
 const Home = () => {

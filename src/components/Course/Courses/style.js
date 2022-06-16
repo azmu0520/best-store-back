@@ -33,6 +33,7 @@ Wrap.Text = styled.div`
     font-size: 16px;
     line-height: 24px;
     margin-top: 16px;
+    padding: 0 30px;
   }
 `;
 
