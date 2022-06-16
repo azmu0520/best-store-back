@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { Wrap } from './style';
 
 const Courses = () => {
@@ -16,15 +17,17 @@ const Courses = () => {
         </Wrap.Descript>
         <Wrap.Cards>
           {count.map((item) => (
-            <Wrap.Card key={item}>
-              <Wrap.Icons>
-                <Wrap.VsCode /> <Wrap.Top>TOP</Wrap.Top>
-              </Wrap.Icons>
-              <Wrap.CardTitle>IOS Dasturlash</Wrap.CardTitle>
-              <Wrap.Mentor>
-                <span>User Userov</span> <a href='/'>Batafsil</a>
-              </Wrap.Mentor>
-            </Wrap.Card>
+            <NavLink key={item} to={`/courses/${item}`}>
+              <Wrap.Card>
+                <Wrap.Icons>
+                  <Wrap.VsCode /> <Wrap.Top>TOP</Wrap.Top>
+                </Wrap.Icons>
+                <Wrap.CardTitle>IOS Dasturlash</Wrap.CardTitle>
+                <Wrap.Mentor>
+                  <span>User Userov</span> <a href='/'>Batafsil</a>
+                </Wrap.Mentor>
+              </Wrap.Card>
+            </NavLink>
           ))}
         </Wrap.Cards>
       </Wrap.Wrap>

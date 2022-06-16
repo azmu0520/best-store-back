@@ -17,7 +17,6 @@ Wrap.Text = styled.div`
   line-height: 75px;
   color: #323a56;
   text-align: center;
-  max-width: 233px;
   width: 100%;
   margin: 0 auto;
   padding-top: 100px;
@@ -28,6 +27,7 @@ Wrap.Text = styled.div`
     font-size: 28px;
     line-height: 34px;
     padding-top: 80px;
+    max-width: 233px;
   }
 `;
 

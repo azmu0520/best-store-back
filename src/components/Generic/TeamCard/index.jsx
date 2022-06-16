@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { teamData } from '../../../mock/team';
 import { Button, Card, Container, Wrap, WrapGrid } from './style';
 
@@ -22,11 +23,13 @@ export const GenericTeamCard = ({ hide, home }) => {
             .filter((e) => (home ? e.isHome : true))
             .map((value) => {
               return (
-                <Card key={value.id}>
-                  <Card.Img src={value.url} alt={value.name} />
-                  <Card.Name>{value.fullname}</Card.Name>
-                  <Card.Job>{value.job}</Card.Job>
-                </Card>
+                <NavLink key={value.id} to={`/teams/${value?.id}`}>
+                  <Card>
+                    <Card.Img src={value.url} alt={value.name} />
+                    <Card.Name> Fozilkhon Buzruqxo'jayev</Card.Name>
+                    <Card.Job>{value.job}</Card.Job>
+                  </Card>
+                </NavLink>
               );
             })}
         </WrapGrid>

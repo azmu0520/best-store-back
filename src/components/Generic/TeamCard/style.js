@@ -108,6 +108,7 @@ export const Card = styled.div`
   padding-bottom: 30px;
   border: 1px solid #eff2f7;
   border-radius: 12px;
+  cursor: pointer;
   transition: all 0.3s;
   :hover {
     border: 1px solid #eff2f7;
