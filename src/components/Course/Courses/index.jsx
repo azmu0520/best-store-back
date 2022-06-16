@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { courseData } from '../../../mock/course';
 import { Wrap } from './style';
 
@@ -16,16 +17,18 @@ const Courses = () => {
         </Wrap.Text>
         <Wrap.Cards>
           {courseData.map((value) => (
-            <Wrap.Card key={value.id}>
-              <Wrap.Icons>
-                <value.url className='icons' />{' '}
-                <Wrap.Top>{value.type}</Wrap.Top>
-              </Wrap.Icons>
-              <Wrap.CardTitle>{value.language}</Wrap.CardTitle>
-              <Wrap.Mentor>
-                <span>{value.mentor}</span> <a href='/'>Batafsil</a>
-              </Wrap.Mentor>
-            </Wrap.Card>
+            <NavLink key={value.id} to={`/courses/${value.id}`}>
+              <Wrap.Card>
+                <Wrap.Icons>
+                  <value.url className='icons' />{' '}
+                  <Wrap.Top>{value.type}</Wrap.Top>
+                </Wrap.Icons>
+                <Wrap.CardTitle>{value.language}</Wrap.CardTitle>
+                <Wrap.Mentor>
+                  <span>{value.mentor}</span> <a href='/'>Batafsil</a>
+                </Wrap.Mentor>
+              </Wrap.Card>
+            </NavLink>
           ))}
         </Wrap.Cards>
       </Wrap.Wrap>

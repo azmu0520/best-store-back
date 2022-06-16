@@ -37,7 +37,9 @@ const Mentor = () => {
   return (
     <Wrap>
       <Wrap.Wrap>
-        <Wrap.Title>Jamoa a’zolari haqida batafsil</Wrap.Title>
+        <Wrap.Title>
+          Jamoa a’zolari <span> haqida batafsil </span>
+        </Wrap.Title>
         <Wrap.Desc>
           A collection of websites and projects built with Webbrain UI
         </Wrap.Desc>

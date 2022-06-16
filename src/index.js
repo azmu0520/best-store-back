@@ -5,6 +5,7 @@ import Root from './root';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import MainContext from './context';
+import 'antd/dist/antd.css';
 
 const queryClient = new QueryClient();
 

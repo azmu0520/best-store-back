@@ -11,12 +11,13 @@ export const Wrap = styled.div``;
 Wrap.Wrap = styled.div`
   max-width: 1300px;
   width: 100%;
-  margin: auto;
+  margin: 100px auto;
 `;
 
 Wrap.Title = styled.div`
   font-weight: 700;
   font-size: 54px;
+
   line-height: 65px;
   text-align: center;
   color: #1d72d2;
