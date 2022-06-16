@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Modals, Wrap } from './style';
-import logo from '../../assets/imgs/logo.png';
+import { Modals, Wrap, NavLinkItem } from './style';
 import { data } from '../../utilits/navbar';
 import { NavLink, Outlet } from 'react-router-dom';
+// compoenent
 import Footer from '../Footer';
 import img from '../../assets/imgs/avatar.png';
 
@@ -35,13 +35,32 @@ const Navbar = () => {
         </Wrap.Modal>
         <Wrap.Wrap>
           <Wrap.Menu onClick={showModal} />
-          <Wrap.Logo />
-          <Wrap.Links>
+          {/* <Wrap.Logo /> */}
+          {/* <Wrap.Links>
             {data.map((item) => (
               <Wrap.Link key={item.id}>
                 <NavLink to={item.path}>{item.title}</NavLink>
               </Wrap.Link>
             ))}
+          </Wrap.Links> */}
+          <Wrap.LogoWrap to='/main'>
+            <Wrap.Logo />
+          </Wrap.LogoWrap>
+          <Wrap.Links>
+            {data.map((item) => {
+              return (
+                !item.hidden && (
+                  <Wrap.Link key={item.id}>
+                    <NavLinkItem className='items' to={item.path}>
+                      {item.title}
+                    </NavLinkItem>
+                  </Wrap.Link>
+                )
+              );
+            })}
+            <Wrap.Btn to='/contact'>
+              Bog'lanish <Wrap.Arrow />
+            </Wrap.Btn>
           </Wrap.Links>
           <Wrap.Avatar>
             <Wrap.Img src={img} />

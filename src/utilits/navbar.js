@@ -1,5 +1,5 @@
+import Blog from '../components/Blog';
 import Course from '../components/Course';
-import Generic from '../components/Generic';
 import Home from '../components/Home';
 import Contact from '../components/Home/Contact';
 import Team from '../components/Team';
@@ -19,26 +19,23 @@ export const data = [
   },
   {
     id: 3,
-    title: 'Blog',
-    path: '/blog',
-    Component: Generic,
-  },
-  {
-    id: 4,
-    title: 'Biz haqimizda',
-    path: '/about',
-    Component: Generic,
-  },
-  {
-    id: 5,
     title: 'Jamoa',
     path: '/team',
     Component: Team,
   },
   {
-    id: 6,
-    title: 'Bog’lanish',
+    id: 4,
+    title: 'Blog',
+    path: '/blog',
+    Component: Blog,
+  },
+
+  {
+    id: 5,
+    title: "Bog'lanish",
     path: '/contact',
     Component: Contact,
+    hidden: true,
+ 
   },
 ];

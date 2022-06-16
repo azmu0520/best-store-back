@@ -1,5 +1,5 @@
 import { ReactComponent as dowland } from '../assets/icons/dowland.svg';
-import { ReactComponent as github } from '../assets/icons/github.svg';
+import { ReactComponent as github } from '../assets/icons/github-res.svg';
 import { ReactComponent as users } from '../assets/icons/users.svg';
 import { ReactComponent as discord } from '../assets/icons/discord.svg';
 

@@ -13,6 +13,8 @@ const Button = ({
   margin,
   shadow,
   children,
+  hide,
+  onClick,
 }) => {
   return (
     <Wrap
@@ -26,6 +28,8 @@ const Button = ({
       padding={padding}
       margin={margin}
       shadow={shadow}
+      hide={hide}
+      onClick={onClick}
     >
       {children}
     </Wrap>

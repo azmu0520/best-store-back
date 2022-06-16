@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+
+// icons
 import { ReactComponent as Arrow } from '../../../assets/icons/arrow.svg';
 
-export const Container = styled.div`
+const Container = styled.div`
   width: 100%;
   max-width: 1400px;
   display: flex;
@@ -29,12 +31,6 @@ Container.SubTitle = styled.div`
 `;
 
 Container.Header = styled.div`
-  font-style: normal;
-  font-weight: 700;
-  font-size: 54px;
-  line-height: 65px;
-  text-align: center;
-  color: #323a56;
   margin: 18px 0px;
   @media (max-width: 1400px) {
     font-size: 40px;
@@ -48,12 +44,6 @@ Container.Header = styled.div`
 `;
 
 Container.Text = styled.div`
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 29px;
-  text-align: center;
-  color: #8a90a5;
   width: 35%;
   @media (max-width: 1150px) {
     font-size: 16px;
@@ -67,37 +57,14 @@ Container.Text = styled.div`
   }
 `;
 
-export const Button = styled.div`
-  width: 180px;
-  height: 64px;
-  background: #1d72d2;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
-  color: #ffffff;
-  margin: 18px 0px 100px 0px;
-  cursor: pointer;
-  :active {
-    transform: scale(0.98);
-  }
-  @media (max-width: 1150px) {
-    margin-bottom: 50px;
-  }
-`;
-
-Button.Arrow = styled(Arrow)`
+Container.Arrow = styled(Arrow)`
   path {
     fill: white;
   }
   margin-left: 14px;
 `;
 
-export const Wrap = styled.div`
+const Wrap = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
@@ -112,7 +79,7 @@ export const Wrap = styled.div`
   }
 `;
 
-export const Card = styled.img`
+const Card = styled.img`
   width: 100%;
   height: 100%;
   transition: all 0.5s;
@@ -121,3 +88,5 @@ export const Card = styled.img`
     transform: scale(1.1);
   }
 `;
+
+export { Container, Wrap, Card };

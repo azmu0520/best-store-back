@@ -1,24 +1,71 @@
 import styled from 'styled-components';
+
 // icons
-import { ReactComponent as telegram } from '../../assets/icons/telegram.svg';
-import { ReactComponent as logo } from '../../assets/icons/logo.svg';
+import { ReactComponent as Telegram } from '../../assets/icons/telegram.svg';
+import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
 import { ReactComponent as Instagram } from '../../assets/icons/instagram.svg';
 import { ReactComponent as Facebook } from '../../assets/icons/facebook.svg';
 import { ReactComponent as Twitter } from '../../assets/icons/twitter.svg';
 import { ReactComponent as LinkedIn } from '../../assets/icons/linkedin.svg';
 
-export const Container = styled.div`
+const Container = styled.div`
   max-width: 1400px;
   width: 100%;
   margin: auto;
   display: grid;
   grid-template-columns: 2fr repeat(3, 1fr) 2fr;
   padding: 50px 0px 72px 0px;
+  @media (max-width: 1400px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: repeat(2, 1fr);
+    gap: 20px 10px;
+    .main {
+      grid-row: 2/4;
+      grid-column: 1/2;
+    }
+    .input {
+      grid-column: 2/4;
+    }
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: repeat(3, 1fr);
+    gap: 20px 10px;
+    .main {
+      grid-row: 3/4;
+      grid-column: 1/4;
+    }
+    .none {
+      display: none;
+    }
+    .input {
+      grid-column: 1/4;
+    }
+  }
+  @media (max-width: 420px) {
+    padding-left: 20px;
+    padding-right: 30px;
+  }
+  @media (max-width: 320px) {
+    gap: 30px 0px;
+    grid-template-columns: repeat(1, 1fr);
+    .main {
+      grid-row: 5/6;
+      grid-column: 1/1;
+    }
+    .input {
+      grid-column: 1/1;
+    }
+  }
 `;
 
-export const Box = styled.div``;
+const Box = styled.div``;
 
-Box.Logo = styled(logo)``;
+Box.Logo = styled(Logo)``;
 
 Box.Descr = styled.div`
   font-style: normal;
@@ -30,7 +77,7 @@ Box.Descr = styled.div`
   margin: 17px 0px 28px 0px;
 `;
 
-export const Flexing = styled.div`
+const Flexing = styled.div`
   display: flex;
   align-items: center;
   gap: 25px;
@@ -45,14 +92,9 @@ export const Flexing = styled.div`
       fill: white;
     }
   }
-  .circle:hover .icons-ins {
-    path {
-      stroke: white;
-    }
-  }
 `;
 
-export const Circle = styled.div`
+const Circle = styled.div`
   width: 40px;
   height: 40px;
   transform: scale(1);
@@ -65,7 +107,10 @@ export const Circle = styled.div`
 `;
 
 Flexing.Facebook = styled(Facebook)``;
-Flexing.Instagram = styled(Instagram)``;
+Flexing.Instagram = styled(Instagram)`
+  width: 16px;
+  height: 16px;
+`;
 Flexing.Twitter = styled(Twitter)``;
 Flexing.LinkedIn = styled(LinkedIn)``;
 
@@ -84,11 +129,10 @@ Box.Item = styled.div`
   font-size: 16px;
   line-height: 19px;
   color: #8a90a5;
-  /* display: inline-block; */
   margin: 15px 0px;
 `;
 
-export const InputCon = styled.div`
+const InputCon = styled.div`
   display: flex;
   align-items: center;
   background: #ffffff;
@@ -111,7 +155,7 @@ InputCon.Inputs = styled.input`
   outline: none;
 `;
 
-export const TelegramCon = styled.div`
+const TelegramCon = styled.div`
   background: #1d72d2;
   border-radius: 8px;
   width: 70px;
@@ -121,4 +165,6 @@ export const TelegramCon = styled.div`
   justify-content: center;
 `;
 
-TelegramCon.Icons = styled(telegram)``;
+TelegramCon.Icons = styled(Telegram)``;
+
+export { Container, Circle, Box, Flexing, InputCon, TelegramCon };

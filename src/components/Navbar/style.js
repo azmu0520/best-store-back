@@ -4,6 +4,8 @@ import { ReactComponent as Arrow } from '../../assets/icons/arrow.svg';
 import { ReactComponent as Menu } from '../../assets/icons/menu.svg';
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
 import { Modal } from 'antd';
+import { Link, NavLink } from 'react-router-dom';
+
 const Wrap = styled.div`
   display: flex;
   align-items: center;
@@ -13,6 +15,12 @@ const Wrap = styled.div`
   padding: 0 40px;
   @media (max-width: 800px) {
     padding: 0 20px;
+    .active::after {
+      transform: scale(1);
+    }
+    .active {
+      color: #1d72d2;
+    }
   }
 `;
 Wrap.Wrap = styled.div`
@@ -25,6 +33,13 @@ Wrap.Wrap = styled.div`
     justify-content: space-between;
   }
 `;
+
+Wrap.LogoWrap = styled(Link)`
+  display: flex;
+  align-items: center;
+`;
+
+Wrap.Logo = styled(Logo)``;
 
 Wrap.Links = styled.div`
   display: flex;
@@ -49,24 +64,48 @@ Wrap.Link = styled.div`
   }
 `;
 
+const NavLinkItem = styled(NavLink)`
+  position: relative;
+
+  ::after {
+    content: '';
+    width: 120%;
+    height: 2px;
+    position: absolute;
+    bottom: -10px;
+    left: -5px;
+    background-color: #1d72d2;
+    transform: scale(0);
+    transform-origin: left;
+    transition: all 0.5s;
+  }
+  :hover::after {
+    transform: scale(1);
+  }
+`;
+
 Wrap.Search = styled(Search)``;
 Wrap.Arrow = styled(Arrow)`
   margin-left: 10px;
 `;
 
 Wrap.Logo = styled(Logo)``;
-Wrap.Btn = styled.div`
+Wrap.Btn = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
   box-sizing: border-box;
-  width: 114px;
   height: 44px;
   background: #f8fafc;
   border: 1px solid #eff2f7;
   border-radius: 8px;
+  cursor: pointer;
+  color: black;
+  :active {
+    transform: scale(0.98);
+  }
 `;
 
 const Container = styled.div`
@@ -74,8 +113,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-
-export { Wrap, Container };
 
 Wrap.Avatar = styled.div`
   position: relative;
@@ -138,3 +175,5 @@ Modals.Link = styled.div`
     text-decoration: none !important;
   }
 `;
+
+export { Wrap, Container, NavLinkItem };

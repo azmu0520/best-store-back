@@ -2,13 +2,13 @@ import React from 'react';
 import { privilegesData } from '../../../mock/privileges';
 import { Container, Wrap, Card } from './style';
 
-export const Privileges = () => {
+const Privileges = () => {
   return (
     <Container>
-      <Container.Header>
-        <span className='span'>Imtiyozlar</span> kimlarga beriladi?
+      <Container.Header className='header'>
+        <span>Imtiyozlar</span> kimlarga beriladi?
       </Container.Header>
-      <Container.Text>
+      <Container.Text className='text'>
         A collection of websites and projects built with Webbrain UI
       </Container.Text>
 
