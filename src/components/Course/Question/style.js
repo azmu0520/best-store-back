@@ -2,13 +2,21 @@ import styled from 'styled-components';
 import { Collapse } from 'antd';
 import { ReactComponent as tick } from '../../../assets/icons/check.svg';
 
-export const Container = styled.div`
+const Container = styled.div`
   width: 100%;
   max-width: 1400px;
   margin: 100px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 1400px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @media (max-width: 420px) {
+    padding-left: 20px;
+    padding-right: 30px;
+  }
 
   .ant-collapse {
     width: 100%;
@@ -87,29 +95,59 @@ export const Container = styled.div`
   p {
     margin: 0;
   }
+
+  @media (max-width: 900px) {
+    .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+      padding: 20px;
+      padding-right: 30px;
+    }
+    .ant-collapse-content > .ant-collapse-content-box {
+      padding: 25px 20px 25px 20px;
+    }
+  }
+  @media (max-width: 600px) {
+    .ant-collapse-item::before {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+      top: 20px;
+    }
+  }
 `;
 
 Container.Header = styled.div`
-  font-style: normal;
-  font-weight: 700;
-  font-size: 54px;
-  line-height: 65px;
-  text-align: center;
-  color: #323a56;
   width: 60%;
+  @media (max-width: 1400px) {
+    font-size: 40px;
+    width: 50%;
+    line-height: 48px;
+  }
+  @media (max-width: 900px) {
+    font-size: 34px;
+    width: 70%;
+    line-height: 40px;
+  }
+  @media (max-width: 600px) {
+    font-size: 26px;
+    width: 100%;
+    line-height: 34px;
+  }
 `;
 
 Container.Text = styled.div`
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 29px;
-  text-align: center;
-  color: #8a90a5;
   margin: 16px 0px 60px 0px;
+  @media (max-width: 1150px) {
+    width: 80%;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 9px 0px 20px 0px;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
-export const CollapseStyle = styled(Collapse)``;
+const CollapseStyle = styled(Collapse)``;
 
 CollapseStyle.Text = styled.div`
   font-style: normal;
@@ -118,9 +156,16 @@ CollapseStyle.Text = styled.div`
   line-height: 30px;
   color: #8a90a5;
   width: 90%;
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+  @media (max-width: 600px) {
+    font-size: 14px;
+    line-height: 22px;
+  }
 `;
 
-export const Flexing = styled.div`
+const Flexing = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -140,6 +185,11 @@ Flexing.Circle = styled.div`
   line-height: 24px;
   color: #1d72d2;
   border-radius: 50%;
+  @media (max-width: 600px) {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
 `;
 
 Flexing.Title = styled.div`
@@ -149,15 +199,33 @@ Flexing.Title = styled.div`
   line-height: 29px;
   color: #323a56;
   margin-left: 20px;
+  padding-right: 20px;
+  @media (max-width: 1150px) {
+    font-size: 18px;
+  }
+  @media (max-width: 900px) {
+    width: 80%;
+    text-align: left;
+  }
+  @media (max-width: 600px) {
+    width: 70%;
+    line-height: 20px;
+    font-size: 16px;
+  }
+  @media (max-width: 420px) {
+    width: 70%;
+    line-height: 16px;
+    font-size: 12px;
+  }
 `;
 
-export const Div = styled.div`
+const Div = styled.div`
   display: flex;
   align-items: center;
 `;
 
 // tick
-export const Wrap = styled.div`
+const Wrap = styled.div`
   display: flex;
   align-items: center;
 `;
@@ -174,3 +242,5 @@ Wrap.TickCon = styled.div`
 `;
 
 Wrap.Icons = styled(tick)``;
+
+export { Container, Wrap, Flexing, Div, CollapseStyle };

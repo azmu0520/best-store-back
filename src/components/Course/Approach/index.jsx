@@ -2,13 +2,13 @@ import React from 'react';
 import { approachData } from '../../../mock/approach';
 import { Card, Container, Wrap } from './style';
 
-export const Approach = () => {
+const Approach = () => {
   return (
     <Container>
-      <Container.Header>
+      <Container.Header className='header'>
         Ta’limga <span className='span'>tizimli</span> yondashuv
       </Container.Header>
-      <Container.Text>
+      <Container.Text className='text'>
         Quyida bizning ustun jihatlarimiz bilan tanishing
       </Container.Text>
 

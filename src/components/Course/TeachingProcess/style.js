@@ -7,32 +7,53 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 1400px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @media (max-width: 420px) {
+    padding-left: 20px;
+    padding-right: 30px;
+  }
 `;
 
 Container.Header = styled.div`
-  font-style: normal;
-  font-weight: 700;
-  font-size: 54px;
-  line-height: 65px;
-  text-align: center;
-  color: #323a56;
+  @media (max-width: 1400px) {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  @media (max-width: 900px) {
+    font-size: 34px;
+    line-height: 40px;
+  }
+  @media (max-width: 600px) {
+    font-size: 26px;
+    line-height: 34px;
+  }
 `;
 
 Container.Text = styled.div`
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 29px;
-  text-align: center;
-  color: #8a90a5;
   width: 35%;
   margin: 16px 0px 50px 0px;
+  @media (max-width: 1150px) {
+    width: 70%;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 9px 0px 20px 0px;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 Container.Video = styled.iframe`
   border-radius: 10px 0px 0px 10px;
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  min-height: 700px;
+  height: 70vh;
+  @media (max-width: 1150px) {
+    height: 40vh;
+  }
+  @media (max-width: 600px) {
+    height: 30vh;
+  }
 `;

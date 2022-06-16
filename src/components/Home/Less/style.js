@@ -1,36 +1,25 @@
 import styled from 'styled-components';
-import img from '../../../assets/imgs/less.png';
+
+// icons
 import { ReactComponent as Play } from '../../../assets/icons/play.svg';
 import { ReactComponent as Star } from '../../../assets/icons/star.svg';
-export const Wrap = styled.div`
+import img from '../../../assets/imgs/less.png';
+
+const Wrap = styled.div`
   background: #fff;
 `;
+
 Wrap.Wrap = styled.div`
   max-width: 1300px;
   margin: 0 auto;
 `;
-Wrap.Text = styled.div`
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 54px;
-  line-height: 75px;
-  text-align: center;
-  color: #323a56;
 
+Wrap.Header = styled.div`
   padding-top: 100px;
-  span {
-    color: #1d72d2;
-  }
 `;
 
-Wrap.Descript = styled.div`
+Wrap.Text = styled.div`
   max-width: 545px;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 29px;
-  text-align: center;
-  color: #8a90a5;
   margin: 0 auto;
   margin-top: 28px;
 `;
@@ -80,7 +69,7 @@ Wrap.PlayCover = styled.div`
   cursor: pointer;
 `;
 
-export const Status = styled.div`
+const Status = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,6 +95,7 @@ Status.Card = styled.div`
 `;
 
 Status.Img = styled.img``;
+
 Status.Plus = styled.div`
   margin-top: 16px;
   font-style: normal;
@@ -124,6 +114,7 @@ Status.Plus = styled.div`
     margin: 0 8px;
   }
 `;
+
 Status.Title = styled.div`
   font-style: normal;
   font-weight: 600;
@@ -132,7 +123,9 @@ Status.Title = styled.div`
   color: #323a56;
   margin: 24px 0 12px 0;
 `;
+
 Status.Price = styled.div``;
+
 Status.Status = styled.div``;
 
 Wrap.StarWrap = styled.div`
@@ -145,6 +138,7 @@ Wrap.StarWrap = styled.div`
   margin-top: 30px;
   margin-left: auto;
 `;
+
 Wrap.Star = styled(Star)`
   cursor: pointer;
   margin-right: 8px;
@@ -152,3 +146,5 @@ Wrap.Star = styled(Star)`
     fill: ${({ active }) => (active === 'true' ? '#F8C100' : '#EFF2F7')};
   }
 `;
+
+export { Wrap, Status };

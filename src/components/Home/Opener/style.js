@@ -1,35 +1,34 @@
 import styled from 'styled-components';
+
+// icons
 import { ReactComponent as Arrow } from '../../../assets/icons/arrow.svg';
 import { ReactComponent as Github } from '../../../assets/icons/github.svg';
-export const Wrap = styled.div`
+import tick from '../../../assets/imgs/tick.png';
+
+const Wrap = styled.div`
   background: #f8fafc;
   height: 90vh;
 `;
+
 Wrap.Wrap = styled.div`
   max-width: 860px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
-Wrap.Text = styled.div`
-  font-family: 'Inter';
+
+Wrap.Header = styled.div`
   font-style: normal;
   font-weight: 800;
   font-size: 62px;
   line-height: 75px;
   text-align: center;
   color: #323a56;
-
   padding-top: 100px;
-  span {
-    color: #1d72d2;
-  }
 `;
 
-Wrap.Descript = styled.div`
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 29px;
-  text-align: center;
-  color: #8a90a5;
+Wrap.Text = styled.div`
   margin-top: 28px;
 `;
 
@@ -38,14 +37,50 @@ Wrap.Btns = styled.div`
   align-items: center;
   justify-content: center;
   margin: 60px auto;
-  padding-bottom: 110px;
 `;
+
 Wrap.Github = styled(Github)`
   margin-right: 10px;
 `;
+
 Wrap.Arrow = styled(Arrow)`
   margin-left: 14px;
   path {
     fill: #fff;
   }
 `;
+
+const Flexing = styled.div`
+  background: #f4fff4;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 17px 24px;
+  width: fit-content;
+`;
+
+Flexing.Tick = styled.img.attrs({
+  src: tick,
+})`
+  margin-right: 12px;
+`;
+
+Flexing.Title = styled.div`
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12spx;
+  line-height: 12px;
+  color: #323a56;
+`;
+
+Flexing.Text = styled.div`
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #70c63b;
+  margin-top: 10px;
+`;
+
+export { Wrap, Flexing };

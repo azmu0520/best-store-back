@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+const Container = styled.div`
   max-width: 1440px;
   width: 100%;
   display: flex;
@@ -9,32 +9,19 @@ export const Container = styled.div`
   margin: 100px auto;
 `;
 
-Container.Header = styled.div`
-  font-style: normal;
-  font-weight: 700;
-  font-size: 54px;
-  line-height: 65px;
-  text-align: center;
-  color: black;
-`;
+Container.Header = styled.div``;
 
 Container.Text = styled.div`
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 29px;
-  text-align: center;
-  color: #8a90a5;
   margin: 16px 0px 60px 0px;
 `;
 
-export const Wrap = styled.div`
+const Wrap = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 90px 40px;
 `;
 
-export const Card = styled.div`
+const Card = styled.div`
   background: #ffffff;
   border: 1px solid #eff2f7;
   border-radius: 10px;
@@ -72,3 +59,5 @@ Card.Text = styled.div`
   line-height: 28px;
   color: #8a90a5;
 `;
+
+export { Container, Wrap, Card };

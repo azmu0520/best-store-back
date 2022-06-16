@@ -1,8 +1,8 @@
 import React from 'react';
-import { Wrap } from './style';
-import logo from '../../assets/imgs/logo.png';
+import { NavLinkItem, Wrap } from './style';
 import { data } from '../../utilits/navbar';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+// compoenent
 import Footer from '../Footer';
 
 const Navbar = () => {
@@ -10,21 +10,23 @@ const Navbar = () => {
     <>
       <Wrap>
         <Wrap.Wrap>
-          <Wrap.LogoWrap>
-            <Wrap.Logo src={logo} />
-            <Wrap.LogoText>
-              WebBrain <span>Academy</span>
-            </Wrap.LogoText>
+          <Wrap.LogoWrap to='/main'>
+            <Wrap.Logo />
           </Wrap.LogoWrap>
           <Wrap.Links>
-            {data.map((item) => (
-              <Wrap.Link key={item.id}>
-                <NavLink to={item.path}>{item.title}</NavLink>
-              </Wrap.Link>
-            ))}
-            <Wrap.Search />
-            <Wrap.Btn>
-              Kirish <Wrap.Arrow />
+            {data.map((item) => {
+              return (
+                !item.hidden && (
+                  <Wrap.Link key={item.id}>
+                    <NavLinkItem className='items' to={item.path}>
+                      {item.title}
+                    </NavLinkItem>
+                  </Wrap.Link>
+                )
+              );
+            })}
+            <Wrap.Btn to='/contact'>
+              Bog'lanish <Wrap.Arrow />
             </Wrap.Btn>
           </Wrap.Links>
         </Wrap.Wrap>

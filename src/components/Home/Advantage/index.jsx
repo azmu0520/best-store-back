@@ -1,27 +1,23 @@
 import React from 'react';
-
+import { advantageData } from '../../../mock/advantage';
 import { Wrap } from './style';
 
 const Advantage = () => {
-  let count = [1, 2, 3, 4, 5, 6];
   return (
     <Wrap>
       <Wrap.Wrap>
-        <Wrap.Text>
-          Bizning ustun <span>jihatlarimiz</span>
-        </Wrap.Text>
-        <Wrap.Descript>
+        <Wrap.Header className='header'>
+          Bizning ustun <span className='span'>jihatlarimiz</span>
+        </Wrap.Header>
+        <Wrap.Text className='text'>
           Quyida bizning ustun jihatlarimiz bilan tanishing
-        </Wrap.Descript>
+        </Wrap.Text>
         <Wrap.CardWrap>
-          {count.map((item) => (
-            <Wrap.Card key={item}>
-              <Wrap.Moon />
-              <Wrap.CardText>Kuchli Mentorlar</Wrap.CardText>
-              <Wrap.SubTitle>
-                Webbrain UI strictly follows WAIARIA standarts for all
-                components strictly follows.
-              </Wrap.SubTitle>
+          {advantageData.map((item) => (
+            <Wrap.Card key={item.id}>
+              <item.Icons className='icons' />
+              <Wrap.CardText>{item.title}</Wrap.CardText>
+              <Wrap.SubTitle>{item.descr}</Wrap.SubTitle>
             </Wrap.Card>
           ))}
         </Wrap.CardWrap>
