@@ -1,21 +1,22 @@
 import React from 'react';
 import { projectData } from '../../../mock/project';
-import { Button, Card, Container, Wrap } from './style';
+import Button from '../../Generic/Button';
+import { Card, Container, Wrap } from './style';
 
-export const Project = () => {
+const Project = () => {
   return (
     <Container>
       <Container.SubTitle>WebBrain Academy</Container.SubTitle>
-      <Container.Header>
+      <Container.Header className='header'>
         Bizning <span className='span'>loyihalar</span>
       </Container.Header>
-      <Container.Text>
+      <Container.Text className='text'>
         Beautiful and responsive React components to build your application or
         marketing pages quicker.
       </Container.Text>
-      <Button>
+      <Button margin='18px 0px 100px 0px'>
         Batafsil
-        <Button.Arrow />
+        <Container.Arrow />
       </Button>
       <Wrap>
         {projectData.map((value) => {

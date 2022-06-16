@@ -4,18 +4,18 @@ import About from '../Home/About';
 import Approach from './Approach';
 import Courses from './Courses';
 import Question from './Question';
-import { Wrap } from './style';
+import TeachingProcess from './TeachingProcess';
 
 export const Course = () => {
   return (
-    <Wrap>
+    <>
       <Courses />
       <GenericTeamCard home={true} />
-      {/* <TeachingProcess /> */}
+      <TeachingProcess />
       <Approach />
       <Question />
       <About />
-    </Wrap>
+    </>
   );
 };
 
