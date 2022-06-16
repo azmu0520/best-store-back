@@ -68,6 +68,9 @@ Container.Arrow = styled(Arrow)`
 Container.Sounds = styled(Sound)`
   margin-top: 80px;
   width: 100%;
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 export { Container, Wrap };

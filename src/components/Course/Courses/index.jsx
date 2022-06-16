@@ -7,7 +7,7 @@ const Courses = () => {
   return (
     <Wrap>
       <Wrap.Wrap>
-        <Wrap.Header>
+        <Wrap.Header className='header'>
           Bizning <span className='span'>kurslarimiz</span>
         </Wrap.Header>
         <Wrap.Text className='text'>
