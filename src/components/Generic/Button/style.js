@@ -14,16 +14,10 @@ export const Wrap = styled.div`
   padding: ${({ padding }) => (padding ? padding : '20px 40px')};
   border: ${({ border }) => (border ? border : '')};
   margin: ${({ margin }) => (margin ? margin : '')};
-<<<<<<< HEAD
   box-shadow: ${({ shadow }) => (shadow ? shadow : '')};
   :hover {
   }
-=======
-  box-shadow: ${({ shadow }) =>
-    shadow ? shadow : '0px 7px 12px rgba(32, 81, 137, 0.24)'};
-  display: ${({ hide }) => hide && 'none'};
->>>>>>> 55ca56a2a2f19ee8258d533f26137a221eaa76a0
-  cursor: pointer;
+  cursor: pointer;  
   user-select: none;
   :active {
     transform: scale(0.98);

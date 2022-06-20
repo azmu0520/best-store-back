@@ -1,7 +1,7 @@
 import Blog from '../components/Blog';
 import Course from '../components/Course';
 import Home from '../components/Home';
-import Contact from '../components/Home/Contact';
+import Contact from '../components/Contact';
 import Team from '../components/Team';
 
 export const data = [
