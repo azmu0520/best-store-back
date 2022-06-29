@@ -1,6 +1,7 @@
 import React from 'react';
 import { Flexing, Wrap } from './style';
 import Button from '../../Generic/Button';
+import img from '../../../assets/imgs/clam.png';
 
 const Opener = () => {
   return (
@@ -16,7 +17,7 @@ const Opener = () => {
 
         {/* btn */}
         <Wrap.Btns>
-          <Button margin='0 16px 20px  0'>
+          <Button>
             Boshlash <Wrap.Arrow />
           </Button>
           <Button
@@ -30,7 +31,7 @@ const Opener = () => {
         </Wrap.Btns>
 
         <Flexing>
-          <Flexing.Tick />
+          <Wrap.Clam src={img} />
           <div>
             <Flexing.Title>Sardorbek Mukhtorov</Flexing.Title>
             <Flexing.Text>

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 // icons
 import { ReactComponent as Arrow } from '../../../assets/icons/arrow.svg';
 import { ReactComponent as Github } from '../../../assets/icons/github.svg';
+// import { ReactComponent as Clam } from '../../../assets/icons/clam.svg';
 import tick from '../../../assets/imgs/tick.png';
 
 const Wrap = styled.div`
@@ -39,6 +40,13 @@ Wrap.Btns = styled.div`
   align-items: center;
   justify-content: center;
   margin: 60px auto;
+  grid-gap: 20px;
+  width: 100%;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    margin-left: 200px;
+    margin-right: 200px;
+  }
 `;
 
 Wrap.Github = styled(Github)`
@@ -83,6 +91,11 @@ Flexing.Text = styled.div`
   line-height: 22px;
   color: #70c63b;
   margin-top: 10px;
+`;
+
+Wrap.Clam = styled.img`
+  width: 80px;
+  margin-right: 10px;
 `;
 
 export { Wrap, Flexing };
