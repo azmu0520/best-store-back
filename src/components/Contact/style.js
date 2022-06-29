@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import {ReactComponent as tel} from '../../../assets/icons/call.svg'
-import {ReactComponent as email} from '../../../assets/icons/email.svg'
-import {ReactComponent as address} from '../../../assets/icons/address.svg'
-import img from '../../../assets/imgs/contact.png'
-import { Marker } from '@react-google-maps/api';
+import {ReactComponent as tel} from '../../assets/icons/call.svg'
+import {ReactComponent as email} from '../../assets/icons/email.svg'
+import {ReactComponent as address} from '../../assets/icons/address.svg'
+import img from '../../assets/imgs/contact.png'
+import { InfoWindow } from '@react-google-maps/api';
 
 
 const Container = styled.div`
@@ -101,14 +101,22 @@ Wrapper.Card = styled.div`
     box-shadow: 0px 10px 16px rgba(32, 81, 137, 0.06);
     @media (max-width: 1300px) {
         padding: 30px 20px;
+        gap: 30px;
     }
+
     @media (max-width: 1200px) {
-        padding: 25px 15px;
-        max-width: 450px;
+        padding: 25px 4px;
+        max-width: 800px;
         width: 100%;
         margin: auto;
         justify-content: center;
+        gap: 30px;
+    }
+
+    @media (max-width: 400px) {
         gap: 20px;
+        padding: 20px 10px;
+
     }
 `
 
@@ -164,7 +172,6 @@ Icons.Address = styled(address)`
 `
 
 Icons.Wrap = styled.div`
-    /* background-color: red; */
     width: 200px;
 `
 
@@ -173,7 +180,6 @@ Wrapper.Description = styled.div`
     font-weight: 400;
     font-size: 20px;
     line-height: 29px;
-    /* text-align: center; */
     color: #8A90A5;
 `
 
@@ -181,16 +187,16 @@ const Box = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 150px;
-    @media (max-width: 1300px) {
-        /* flex-direction: column; */
-    }
     @media (max-width: 1200px) {
         flex-direction: column;
         margin-bottom: 60px;
-    }
+        max-width: 800px;
+        margin: auto;
+        width: 100%;
+    }   
 `
 
-Box.Form = styled.div`
+Box.Form = styled.form`
     background: #FFFFFF;
     border: 1px solid #EFF2F7;
     box-shadow: 0px 10px 16px rgba(32, 81, 137, 0.06);
@@ -199,13 +205,16 @@ Box.Form = styled.div`
     padding: 50px;
     border-radius: 8px 0px 0px 8px;
     @media (max-width: 1300px) {
-        /* padding: 80px 30px; */
     }
     @media (max-width: 1200px) {
         border-radius: 8px;
         padding: 30px;
     }
-`
+    @media (max-width: 400px) {
+        padding: 20px;
+
+    }
+`;
 
 Box.Subtitle = styled.div`
     font-style: normal;
@@ -287,16 +296,56 @@ Box.Desc = styled.div`
 `
 
 const MapWrapper = styled.div`
+    position: relative;
     width: 100%;
     height: 600px;
     @media (max-width: 1200px) {
         height: 420px;
     }
+    .gm-ui-hover-effect{
+        display: none !important;
+    }
+    /* .gm-style .gm-style-iw-c {
+
+    }
+    .gm-style-iw-t::after{
+
+    } */
 
 `
 
-const MapMarker = styled(Marker)`
-    position: relative;
+const InfoWindowW = styled(InfoWindow)`
+ position: absolute;
+ top: 20px;
+
 `
 
-export { Container, Title, Description, Wrapper, Icons, MapWrapper, Subtitle, Box, MapMarker }
+const Label = styled.div`
+    /* position: absolute; */
+    width: fit-content;
+    background: #FFFFFF;
+    /* border: 1px solid #EFF2F7; */
+    border-radius: 6px;
+    padding: 20px 15px;
+`
+
+Label.Title = styled.div`
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #323A56;
+    margin-bottom: 10px;
+`
+
+Label.Description = styled.div`
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #8A90A5;
+    width: 220px;
+`
+
+
+export { Container, Title, Description, Wrapper, Icons, MapWrapper, Subtitle, Box, InfoWindowW, Label }

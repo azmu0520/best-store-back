@@ -9,7 +9,6 @@ export const Input = forwardRef(
     height,
     width,
     type,
-    
     mr,
     ml,
     mb,
@@ -26,6 +25,7 @@ export const Input = forwardRef(
     <Wrapper mr={mr} ml={ml} mb={mb} mt={mt}>
         <Icon>{children}</Icon>
         <Container 
+
             ref={ref}
             onChange={onChange}
             placeholder={placeholder}

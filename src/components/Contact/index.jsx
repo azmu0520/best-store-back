@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import Button from '../../Generic/Button';
-import Input from '../../Generic/Input';
+import emailjs from 'emailjs-com'
+import React, { useRef } from 'react';
+import Button from '../Generic/Button';
+import Input from '../Generic/Input';
 import {
   Container,
   Description,
@@ -10,25 +11,22 @@ import {
   Subtitle,
   Box,
   MapWrapper,
-  MapMarker,
+  Label,
+  InfoWindowW,
 } from './style';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 
-export const Contact = () => {
-  const [center, setCenter] = useState({
-    lat: 41.311081,
-    lng: 69.240562,
-  });
+export const Contact = () => {  
 
   const containerStyle = {
     width: '100%',
     height: '100%',
   };
 
-  // const center = {
-  //     lat: 41.311081,
-  //     lng: 69.240562
-  // };
+  const center = {
+      lat: 41.27672898036958,
+      lng: 69.22216598386504
+  };
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -47,14 +45,28 @@ export const Contact = () => {
   //     setMap(null)
   //   }, [])
 
-  const onMapClick = (e) => {
-    // console.log(e?.latLng?.lat(), 'lat');
-    // console.log(e?.latLng?.lng(), 'lng');
-    setCenter({
-      lat: e?.latLng?.lat(),
-      lng: e?.latLng?.lng(),
-    });
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_vfmgarv',
+        'template_0pgr4wj',
+        form.current,
+        'user_pywPsnKY1q8czlk9MyD56'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
+
 
   return (
     <>
@@ -72,8 +84,13 @@ export const Contact = () => {
             </Icons>
             <Icons.Wrap>
               <Subtitle>Telefon raqamlar</Subtitle>
-              <Wrapper.Description>(99) 123 45 67</Wrapper.Description>
-              <Wrapper.Description>(95) 256 78 90</Wrapper.Description>
+              <a href="tel: +998 99 123 45 67">
+                <Wrapper.Description>(99) 123 45 67</Wrapper.Description>
+              </a>
+              <a href="tel: +998 95 256 78 90">
+                <Wrapper.Description>(95) 256 78 90</Wrapper.Description>
+              </a>
+              
             </Icons.Wrap>
           </Wrapper.Card>
           <Wrapper.Card>
@@ -82,8 +99,13 @@ export const Contact = () => {
             </Icons>
             <Icons.Wrap>
               <Subtitle>Email manzilimiz</Subtitle>
-              <Wrapper.Description>hello@gmail.com</Wrapper.Description>
-              <Wrapper.Description>helloteam@gmail.com</Wrapper.Description>
+              <a href="mailto:hello@gmail.com">
+                <Wrapper.Description>hello@gmail.com</Wrapper.Description>
+              </a>
+              <a href="mailto:helloteam@gmail.com">
+                <Wrapper.Description>helloteam@gmail.com</Wrapper.Description>
+              </a>
+              
             </Icons.Wrap>
           </Wrapper.Card>
           <Wrapper.Card>
@@ -101,13 +123,13 @@ export const Contact = () => {
         </Wrapper>
 
         <Box>
-          <Box.Form>
+          <Box.Form ref={form} onSubmit={sendEmail}>
             <Box.Subtitle>Xabar yuborish</Box.Subtitle>
-            <Input placeholder='Ismingiz' mt='30' />
-            <Input placeholder='Familiyangiz' mt='30' />
-            <Input placeholder='Telefoningiz' mt='30' />
-            <Input placeholder='Emailingiz' mt='30' />
-            <Box.Textarea placeholder='Xabaringizni yozing' />
+            <Input type='text' name='names' mt='30' />
+            <Input name='surname' placeholder='Familiyangiz' mt='30' />
+            <Input name='tel' placeholder='Telefoningiz' mt='30' />
+            <Input name='email' placeholder='Emailingiz' mt='30' />
+            <Box.Textarea name='description' placeholder='Xabaringizni yozing' />
             <Button width={'100%'} margin={'30px 0 0 0'}>
               Xabarni yuborish
             </Button>
@@ -118,13 +140,15 @@ export const Contact = () => {
               Sizni savollar qiynayotgan bo’lsa, hoziroq bizga qo’ng’iroq
               qiling!
             </Box.Desc>
-            <Button
+            <input type="submit" />
+            {/* <Button
               margin={'30px 0 0 0'}
               background={'#F8FAFC'}
               color={'#1D72D2'}
+              onClick={sendEmail}
             >
               Maslahat olish
-            </Button>
+            </Button> */}
           </Box.Item>
         </Box>
       </Container>
@@ -134,12 +158,20 @@ export const Contact = () => {
             mapContainerStyle={containerStyle}
             center={center}
             zoom={10}
-            onClick={onMapClick}
             // onLoad={onLoad}
             // maxZoomStatus={20}
             // onUnmount={onUnmount}
           >
-            <MapMarker label={'Biz bu yerdamiz'} position={center}></MapMarker>
+            <Marker  position={center}></Marker>
+            <InfoWindowW position={{
+                    lat: 41.27672898036958+0.00002,
+                    lng: 69.22216598386504
+                }}>
+              <Label>
+                <Label.Title >Biz bu yerdamiz!</Label.Title>
+                <Label.Description>Sizni kutib olishdan mamnunmiz! Manzilimiz: Istiqlol ko‘chasi 1a uy, Yunusobod tumani, Toshkent sh.</Label.Description>
+              </Label>
+            </InfoWindowW>
             <></>
           </GoogleMap>
         ) : (
