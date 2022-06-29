@@ -3,7 +3,7 @@ import { ReactComponent as Search } from '../../assets/icons/search.svg';
 import { ReactComponent as Arrow } from '../../assets/icons/arrow.svg';
 import { ReactComponent as Menu } from '../../assets/icons/menu.svg';
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
-import { Modal } from 'antd';
+import { Drawer } from 'antd';
 import { Link, NavLink } from 'react-router-dom';
 
 const Wrap = styled.div`
@@ -144,17 +144,7 @@ Wrap.Menu = styled(Menu)`
   }
 `;
 
-Wrap.Modal = styled(Modal)`
-  margin: 0 !important;
-  margin-left: 0 !important;
-  top: 0 !important;
-  .ant-modal-body {
-    padding: 50px 24px;
-  }
-  .ant-modal-close {
-    left: 0 !important;
-  }
-`;
+Wrap.Modal = styled(Drawer)``;
 
 export const Modals = styled.div`
   display: flex;

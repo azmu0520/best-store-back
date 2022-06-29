@@ -14,25 +14,9 @@ Wrap.Wrap = styled.div`
   margin: 100px auto;
 `;
 
-Wrap.Title = styled.div`
-  font-weight: 700;
-  font-size: 54px;
-
-  line-height: 65px;
-  text-align: center;
-  color: #1d72d2;
-  span {
-    color: #323a56;
-  }
-`;
+Wrap.Title = styled.div``;
 
 Wrap.Desc = styled.div`
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 29px;
-  text-align: center;
-  color: #8a90a5;
   margin: 16px 0 50px 0;
 `;
 
@@ -44,6 +28,9 @@ export const Card = styled.div`
   background: #ffffff;
   border: 1px solid #eff2f7;
   border-radius: 6px;
+  @media (max-width: 1400px) {
+    flex-direction: column;
+  }
 `;
 
 Wrap.Img = styled.img`

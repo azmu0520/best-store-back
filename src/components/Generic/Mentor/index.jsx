@@ -37,10 +37,10 @@ const Mentor = () => {
   return (
     <Wrap>
       <Wrap.Wrap>
-        <Wrap.Title>
-          Jamoa a’zolari <span> haqida batafsil </span>
+        <Wrap.Title className='header'>
+          <span>Jamoa a’zolari </span> haqida batafsil
         </Wrap.Title>
-        <Wrap.Desc>
+        <Wrap.Desc className='text'>
           A collection of websites and projects built with Webbrain UI
         </Wrap.Desc>
         <Card>
@@ -90,7 +90,7 @@ const Mentor = () => {
               an early age.
             </Full.Text>
             {user.skills.map((item) => (
-              <Full.SkilWrap>
+              <Full.SkilWrap key={item.level}>
                 <Full.SkillTitle>{item.name}</Full.SkillTitle>
                 <Progress percent={item.level} />
               </Full.SkilWrap>
