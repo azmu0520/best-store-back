@@ -3,12 +3,10 @@ import styled from 'styled-components';
 // icons
 import { ReactComponent as Arrow } from '../../../assets/icons/arrow.svg';
 import { ReactComponent as Github } from '../../../assets/icons/github.svg';
-// import { ReactComponent as Clam } from '../../../assets/icons/clam.svg';
 import tick from '../../../assets/imgs/tick.png';
 
 const Wrap = styled.div`
   background: #f8fafc;
-  /* height: 90vh; */
   padding: 23px;
   box-sizing: border-box;
 `;
@@ -27,7 +25,8 @@ Wrap.Header = styled.div`
 
 Wrap.Text = styled.div`
   margin-top: 28px;
-
+  max-width: 545px;
+  margin: 0 auto;
   @media (max-width: 1000px) {
     font-size: 16px;
     line-height: 24px;
@@ -44,8 +43,7 @@ Wrap.Btns = styled.div`
   width: 100%;
   @media (max-width: 1000px) {
     flex-direction: column;
-    margin-left: 200px;
-    margin-right: 200px;
+    max-width: 500px;
   }
 `;
 

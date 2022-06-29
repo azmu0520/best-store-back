@@ -20,10 +20,8 @@ const Navbar = () => {
       <Wrap>
         <Wrap.Modal
           visible={isModalVisible}
-          onCancel={handleCancel}
-          footer={null}
-          centered={false}
-          width='300px'
+          placement='left'
+          onClose={handleCancel}
         >
           <Modals>
             {data.map((item) => (

@@ -33,18 +33,6 @@ export const Contact = () => {
     googleMapsApiKey: 'AIzaSyAkkKvMyf8Tk3Q8s7MWXin6njbtjIjq2S4',
   });
 
-  //   const [map, setMap] = React.useState(null)
-
-  //   const onLoad = React.useCallback(function callback(map) {
-  //     const bounds = new window.google.maps.LatLngBounds(center);
-  //     map.fitBounds(bounds);
-  //     setMap(map)
-  //   }, [])
-
-  //   const onUnmount = React.useCallback(function callback(map) {
-  //     setMap(null)
-  //   }, [])
-
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -158,9 +146,6 @@ export const Contact = () => {
             mapContainerStyle={containerStyle}
             center={center}
             zoom={10}
-            // onLoad={onLoad}
-            // maxZoomStatus={20}
-            // onUnmount={onUnmount}
           >
             <Marker  position={center}></Marker>
             <InfoWindowW position={{
@@ -178,7 +163,6 @@ export const Contact = () => {
           <></>
         )}
       </MapWrapper>
-      {/* <Subscribe /> */}
     </>
   );
 };

@@ -2,10 +2,6 @@ import styled from 'styled-components';
 
 const Wrap = styled.div`
   background: #f8fafc;
-<<<<<<< HEAD
-  /* height: 90vh; */
-  width: 100%;
-=======
   .icons {
     width: 50px;
     box-sizing: border-box;
@@ -14,7 +10,6 @@ const Wrap = styled.div`
     border-radius: 50%;
     height: 50px;
   }
->>>>>>> 55ca56a2a2f19ee8258d533f26137a221eaa76a0
 `;
 
 Wrap.Wrap = styled.div`
@@ -24,17 +19,6 @@ Wrap.Wrap = styled.div`
 
 Wrap.Header = styled.div`
   padding-top: 100px;
-<<<<<<< HEAD
-  @media (max-width: 1000px) {
-    font-size: 28px;
-    padding-top: 80px;
-    line-height: 34px;
-  }
-  span {
-    color: #1d72d2;
-  }
-=======
->>>>>>> 55ca56a2a2f19ee8258d533f26137a221eaa76a0
 `;
 
 Wrap.Text = styled.div`
