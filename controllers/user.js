@@ -1,6 +1,6 @@
 const User = require('../modules/user');
 
-// Get all users
+// Get all users    // working
 exports.getAllUsers = async (req, res) => {
   try {
     const users = await User.find();
@@ -13,12 +13,12 @@ exports.getAllUsers = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       status: 'fail',
-      message: error || 'Something went wrong',
+      message: error,
     });
   }
 };
 
-// Get a single user
+// Get a single user  // working
 exports.getUser = async (req, res) => {
   try {
     const user = await User.findById(req.params._id);
@@ -40,7 +40,7 @@ exports.getUser = async (req, res) => {
   }
 };
 
-// create new User
+// create new User // working
 exports.createUser = async (req, res) => {
   // Check if a user email is exist
   const isEmailTaken = await User.findOne({ email: req.body.email });
@@ -68,17 +68,10 @@ exports.createUser = async (req, res) => {
   }
 };
 
-// Update user
+// Update user // working but dublication is being error
 exports.updateUser = async (req, res) => {
   try {
-    const user = await User.findByIdAndUpdate(
-      req.params._id,
-      { $set: req.body },
-      {
-        new: true,
-      }
-    );
-    console.log(user);
+    const user = await User.findByIdAndUpdate(req.params._id, req.body);
     if (!user) {
       return res.status(404).json({
         status: 'fail',
@@ -97,7 +90,7 @@ exports.updateUser = async (req, res) => {
   }
 };
 
-// block user
+// block user   // working
 exports.blockUser = async (req, res) => {
   try {
     const user = await User.findByIdAndUpdate(
@@ -121,7 +114,7 @@ exports.blockUser = async (req, res) => {
   }
 };
 
-// unblock
+// unblock    // working
 exports.unBlockUser = async (req, res) => {
   try {
     const user = await User.findByIdAndUpdate(
@@ -145,7 +138,7 @@ exports.unBlockUser = async (req, res) => {
   }
 };
 
-// delete
+// delete   // working
 exports.deleteUser = async (req, res) => {
   try {
     const user = await User.findByIdAndDelete(req.params._id);

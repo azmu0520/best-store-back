@@ -16,8 +16,12 @@ app.use(express.json());
 
 // Import Routes
 const userRoutes = require('./routes/user');
+const collectionRoutes = require('./routes/collection');
+// const commentRoutes = require('./routes/comment');
 
 // Route Middlewares
 app.use('/api/users', userRoutes);
+app.use('/api/collections', collectionRoutes);
+// app.use('/api/comment/:_id', commentRoutes);
 
 app.listen(5000, () => console.log('server on'));
