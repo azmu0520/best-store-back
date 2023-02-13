@@ -3,7 +3,7 @@ const Collection = require('../modules/collection');
 // Get All Collections
 exports.getAllCollections = async (req, res) => {
   try {
-    const collection = await Collection.find().populate('auther', 'first_name');
+    const collection = await Collection.find();
     if (!collection) {
       return res
         .status(404)
@@ -42,14 +42,14 @@ exports.getUsersCollection = async (req, res) => {
 
 // create new Collection
 exports.createCollection = async (req, res) => {
+  const collection = new Collection({
+    name: req.body.name,
+    topic: req.body.topic,
+    image: req.body.image,
+    description: req.body.description,
+  });
+  console.log(req.body);
   try {
-    const collection = await Collection.create({
-      // user_id: req.body.user_id,
-      name: req.body.name,
-      topic: req.body.topic,
-      image: req.body.image,
-      description: req.body.description,
-    });
     await collection.save();
     res
       .status(201)

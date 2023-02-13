@@ -3,7 +3,7 @@ const User = require('../modules/user');
 // Get all users    // working
 exports.getAllUsers = async (req, res) => {
   try {
-    const users = await User.find();
+    const users = await User.find().populate('collection');
     if (!users) {
       return res
         .status(404)
@@ -45,8 +45,6 @@ exports.createUser = async (req, res) => {
   // Check if a user email is exist
   const isEmailTaken = await User.findOne({ email: req.body.email });
   if (isEmailTaken) {
-    if (isEmailTaken?.status) {
-    }
     return res
       .status(400)
       .json({ status: 'fail', message: 'Email already in use' });

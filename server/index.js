@@ -7,9 +7,17 @@ dotenv.config();
 
 // Connect to DB
 mongoose.set('strictQuery', true);
-mongoose.connect(process.env.DB_URL, () => {
-  console.log('connected to db');
-});
+mongoose.connect(
+  process.env.DB_URL,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  },
+  () => {
+    console.log('connected to db');
+  }
+);
 
 // Middleware
 app.use(express.json());
