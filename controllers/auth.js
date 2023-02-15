@@ -6,17 +6,26 @@ const User = require('../modules/user');
 
 exports.registerUser = async (req, res) => {
   try {
-    const { firstName, lastName, email, password } = req.body;
+    const { first_name, last_name, email, password } = req.body;
+    const emailExist = await User.findOne({ email: email });
+    console.log(email);
+    if (emailExist) {
+      return res
+        .status(400)
+        .json({ status: 'fail', message: 'Email already in use' });
+    }
     const salt = await bcrypt.genSalt();
     const passwordHash = await bcrypt.hash(password, salt);
     const newUser = new User({
-      firstName,
-      lastName,
-      email,
+      first_name: first_name,
+      last_name: last_name,
+      email: email,
       password: passwordHash,
     });
-    const savedUser = await newUser.save();
-    res.status(201).json(savedUser);
+    await newUser.save();
+    res
+      .status(201)
+      .json({ status: 'success', message: 'Successfully Registered' });
   } catch (error) {
     res.status(500).json(error);
   }
@@ -39,7 +48,7 @@ exports.loginUser = async (req, res) => {
     }
     const token = jwt.sign({ id: user._id }, process.env.JWT_HACK);
     delete user.password;
-    res.status(200).json({ token, user });
+    res.status(200).json({ token });
   } catch (error) {
     res.status(500).json({
       status: 'fail',

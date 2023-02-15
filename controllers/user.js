@@ -3,7 +3,7 @@ const User = require('../modules/user');
 // Get all users    // working
 exports.getAllUsers = async (req, res) => {
   try {
-    const users = await User.find().populate('collection');
+    const users = await User.find();
     if (!users) {
       return res
         .status(404)
@@ -32,32 +32,6 @@ exports.getUser = async (req, res) => {
       status: 'success',
       data: user,
     });
-  } catch (error) {
-    res.status(500).json({
-      status: 'fail',
-      message: error,
-    });
-  }
-};
-
-// create new User // working
-exports.createUser = async (req, res) => {
-  // Check if a user email is exist
-  const isEmailTaken = await User.findOne({ email: req.body.email });
-  if (isEmailTaken) {
-    return res
-      .status(400)
-      .json({ status: 'fail', message: 'Email already in use' });
-  }
-  const user = new User({
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
-    email: req.body.email,
-    password: req.body.password,
-  });
-  try {
-    await user.save();
-    res.status(201).json({ status: 'success', message: 'New user created' });
   } catch (error) {
     res.status(500).json({
       status: 'fail',
