@@ -48,7 +48,6 @@ exports.createCollection = async (req, res) => {
     image: req.body.image,
     description: req.body.description,
   });
-  console.log(req.body);
   try {
     await collection.save();
     res
@@ -65,7 +64,6 @@ exports.createCollection = async (req, res) => {
 exports.deleteCollection = async (req, res) => {
   try {
     const collection = await Collection.findByIdAndDelete(req.params._id);
-    console.log(req.params._id);
     if (!collection) {
       return res.status(404).json({
         status: 'fail',

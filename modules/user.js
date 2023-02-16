@@ -23,6 +23,14 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
+    admin: {
+      type: Boolean,
+      default: false,
+    },
+    accessToken: {
+      type: String,
+      default: '',
+    },
     // collections: [
     //   {
     //     type: mongoose.Schema.Types.ObjectId,

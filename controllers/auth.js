@@ -4,7 +4,7 @@ const User = require('../modules/user');
 
 // Regsiter user
 
-exports.registerUser = async (req, res) => {
+exports.registerUser = async (req, res, next, admin) => {
   try {
     const { first_name, last_name, email, password } = req.body;
     const emailExist = await User.findOne({ email: email });
@@ -21,6 +21,7 @@ exports.registerUser = async (req, res) => {
       last_name: last_name,
       email: email,
       password: passwordHash,
+      admin,
     });
     await newUser.save();
     res
