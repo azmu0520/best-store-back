@@ -2,7 +2,7 @@
 
 <ol>
 <li>
- <input type="checkbox" id="1"> <label for="1">App should support registration and authentication.</label>
+ <input value="checked" type="checkbox" id="1"> <label for="1">App should support registration and authentication.</label>
  <ul>
  <li>
  Register a user with <a href="/">MAIN_ULR/api/auth/register</a>. <br /> It requires first_name , last_name , email , password.
