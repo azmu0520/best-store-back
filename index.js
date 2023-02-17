@@ -2,10 +2,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const app = express();
+const cors = require('cors');
 
 // enable cors
-app.use(require('cors')({ origin: '*' }));
+app.use(cors({ origin: '*' }));
 
+// env config
 dotenv.config();
 
 // Connect to DB
