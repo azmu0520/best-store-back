@@ -5,7 +5,6 @@ module.exports = async function (req, res, next, role) {
   try {
     if (!token) return res.status(401).send('Access Denied');
     const isAdmin = await User.findOne({ email: req.body.email });
-    console.log(isAdmin);
     if (isAdmin.admin !== role) {
       return res.status(403).json({ status: 'fail', message: 'Frobidden' });
     }
