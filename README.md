@@ -2,7 +2,7 @@
 
 <ol>
 <li>
- <input value="checked" type="checkbox" id="1"> <label for="1">App should support registration and authentication.</label>
+ <input checked type="checkbox" id="1"> <label for="1">App should support registration and authentication.</label>
  <ul>
  <li>
  Register a user with <a href="/">MAIN_ULR/api/auth/register</a>. <br /> It requires first_name , last_name , email , password.
@@ -17,7 +17,18 @@
 </li>
  <br />
 <li>
- <input type="checkbox" id="2"> <label for="2">App should support registration and authentication.</label>
+ <input checked type="checkbox" id="2"> <label for="2">Varified user can add , edit , remove collections</label>
+ <ul>
+    <li>
+        Create a collection <a href="/">MAIN_ULR/api/collections</a>. <br> It requires name , short_description , topic , createdBy: userId and optional Image
+    </li>
+    <li>
+        Edit a collection <a href="/">MAIN_ULR/api/collections/collectionId</a>. <br> It requires either of name , short_description , topic , createdBy: userId and optional Image
+    </li>
+    <li>
+        Remove a collection <a href="/">MAIN_ULR/api/collections/collectionId</a>.
+    </li>
+ </ul>
 </li>
  <br />
 <li>

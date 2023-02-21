@@ -35,12 +35,14 @@ exports.registerUser = async (req, res, next, admin) => {
 exports.loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
-    const user = await User.findOne({ email: email });
+    const user = await User.findOne({ email: email }).populate('posts');
+
     if (!user) {
       return res
         .status(400)
         .json({ status: 'fail', message: 'User not found' });
     }
+    console.log(user);
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res
@@ -49,7 +51,7 @@ exports.loginUser = async (req, res) => {
     }
     const token = jwt.sign({ id: user._id }, process.env.JWT_HACK);
     delete user.password;
-    res.status(200).json({ token });
+    res.status(200).json({ token, userId: user._id });
   } catch (error) {
     res.status(500).json({
       status: 'fail',

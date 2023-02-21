@@ -19,24 +19,16 @@ const userSchema = new mongoose.Schema(
       required: true,
       minlength: 6,
     },
-    status: {
-      type: Boolean,
-      default: true,
-    },
     admin: {
       type: Boolean,
       default: false,
     },
-    accessToken: {
-      type: String,
-      default: '',
-    },
-    // collections: [
-    //   {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'Collection',
-    //   },
-    // ],
+    posts: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Collection',
+      },
+    ],
   },
   { timestamps: true }
 );

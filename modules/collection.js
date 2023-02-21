@@ -18,9 +18,10 @@ const collectionSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
-    tags: {
-      type: Array,
-      required: false,
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
     },
   },
   {
@@ -31,13 +32,3 @@ const collectionSchema = new mongoose.Schema(
 const Collection = mongoose.model('Collection', collectionSchema);
 
 module.exports = Collection;
-
-// {
-//     "user_id": ,
-//     "name": ,
-//     "topic": ,
-//     "image": ,
-//     "description" ,
-// }
-
-// 6358c5ca140cd275a9ccee5f
