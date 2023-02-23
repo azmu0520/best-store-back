@@ -17,9 +17,11 @@ exports.getAllCollections = async (req, res) => {
 };
 
 // Get a user related collection
-exports.getUsersCollection = async (req, res) => {
+exports.getSingleCollection = async (req, res) => {
   try {
-    const collection = await Collection.findById(req.params._id);
+    const collection = await Collection.findById(req.params._id)
+      .populate('items')
+      .exec();
     if (!collection) {
       return res.status(404).json({
         status: 'fail',

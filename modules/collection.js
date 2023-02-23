@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Topic = require('./topic');
 
 const collectionSchema = new mongoose.Schema(
   {
@@ -10,13 +11,21 @@ const collectionSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    topic: {
-      type: String,
-      required: true,
-    },
     image: {
       type: String,
       required: false,
+    },
+    items: {
+      type: Array,
+    },
+    topic: {
+      type: String,
+      enum: [
+        {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Topic',
+        },
+      ],
     },
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,

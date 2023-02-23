@@ -3,17 +3,17 @@ const router = express.Router();
 const auth = require('../controllers/verifiedToken');
 const {
   getAllCollections,
-  getUsersCollection,
   createCollection,
   deleteCollection,
   editCollection,
+  getSingleCollection,
 } = require('../controllers/collection');
 
 router.route('/').get(getAllCollections).post(auth, createCollection);
 
 router
   .route('/:_id')
-  .get(auth, getUsersCollection)
+  .get(auth, getSingleCollection)
   .patch(auth, editCollection)
   .delete(auth, deleteCollection);
 
