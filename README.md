@@ -50,9 +50,14 @@
  <input type="checkbox" id="4"> <label for="4">When you have a collection you can add , edit and delete items in it</label>
  <ul>
     <li>
-        Add item to the collection <a href="/">MAIN_ULR/api/items</a>.
-        <br> 
+        Add item to the collection <a href="/">MAIN_ULR/api/items</a>. <br>
+        It requires name and collectionId , optionally you can add custom fields
+        <br> Method='POST'
     </li>
+    <li>
+        
+    </li>
+
  </ul>
 
 </li>

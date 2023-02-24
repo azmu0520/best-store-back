@@ -54,7 +54,9 @@ exports.createCollection = async (req, res) => {
     await (
       await collection.save()
     ).populate('createdBy', ['first_name', 'last_name']);
-    res.status(201).json({ status: 'success', message: collection });
+    res
+      .status(201)
+      .json({ status: 'success', message: 'Collection successfully created' });
   } catch (error) {
     res.status(500).json({
       status: 'fail',
@@ -62,6 +64,8 @@ exports.createCollection = async (req, res) => {
     });
   }
 };
+
+// edit Collection
 
 exports.editCollection = async (req, res) => {
   try {
@@ -89,6 +93,8 @@ exports.editCollection = async (req, res) => {
     });
   }
 };
+
+// delete collection
 
 exports.deleteCollection = async (req, res) => {
   try {

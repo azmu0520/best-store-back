@@ -11,6 +11,11 @@ const itemSchema = new mongoose.Schema(
       ref: 'Collection',
       required: true,
     },
+    auther: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
+    },
   },
   { strict: false }
 );
@@ -18,3 +23,5 @@ const itemSchema = new mongoose.Schema(
 const Item = mongoose.model('Item', itemSchema);
 
 module.exports = Item;
+
+// 63f4975ff170c32066bfc28f
