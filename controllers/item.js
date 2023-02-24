@@ -17,7 +17,6 @@ exports.getAllItems = async (req, res) => {
 // create new Item
 exports.createItem = async (req, res) => {
   const { name, collectionId } = req.body;
-  console.log(req.body);
   const item = new Item(req.body);
   try {
     const collection1 = await Collection.findById(collectionId);
