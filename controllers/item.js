@@ -1,14 +1,14 @@
-const Collection = require('../modules/collection');
-const Item = require('../modules/item');
+const Collection = require("../modules/collection");
+const Item = require("../modules/item");
 
 // Get All Items
 exports.getAllItems = async (req, res) => {
   try {
     const items = await Item.find({});
-    res.status(200).json({ status: 'success', data: items });
+    res.status(200).json({ status: "success", data: items });
   } catch (error) {
     res.status(500).json({
-      status: 'fail',
+      status: "fail",
       message: error,
     });
   }
@@ -16,22 +16,39 @@ exports.getAllItems = async (req, res) => {
 
 // create new Item
 exports.createItem = async (req, res) => {
-  const { name, collectionId } = req.body;
   const item = new Item(req.body);
   try {
-    const collection1 = await Collection.findById(collectionId);
     await Collection.findByIdAndUpdate(
-      collectionId,
+      req.body.collectionId,
       {
-        items: [...collection1.items, item],
+        $push: { items: item },
       },
       { new: true }
     );
     await item.save();
-    res.status(201).json({ status: 'success', message: item });
+    res
+      .status(201)
+      .json({ status: "success", message: "Item Edited Successfully!" });
   } catch (error) {
     res.status(500).json({
-      status: 'fail',
+      status: "fail",
+      message: error,
+    });
+  }
+};
+
+exports.getSingleItem = async (req, res) => {
+  try {
+    const item = await Item.findById(req.params._id).lean().exec();
+    if (!item) {
+      return res
+        .status(404)
+        .json({ status: "fail", message: "Item not found" });
+    }
+    return res.status(200).json({ status: 200, data: item });
+  } catch (error) {
+    res.status(500).json({
+      status: "fail",
       message: error,
     });
   }
@@ -42,22 +59,20 @@ exports.editItem = async (req, res) => {
   try {
     const editedItem = await Item.findByIdAndUpdate(req.params._id, req.body, {
       new: true,
-    })
-      .populate('createdBy', ['first_name', 'last_name'])
-      .exec();
+    });
     if (!editedItem) {
       return res.status(404).json({
-        status: 'fail',
-        message: 'Item not found!',
+        status: "fail",
+        message: "Item not found!",
       });
     }
     res.status(200).json({
-      status: 'success',
-      data: editedItem,
+      status: "success",
+      message: "Item Edited Successfully!",
     });
   } catch (error) {
     res.status(500).json({
-      status: 'fail',
+      status: "fail",
       message: error,
     });
   }
@@ -70,17 +85,17 @@ exports.deleteItem = async (req, res) => {
     const Item = await Item.findByIdAndDelete(req.params._id);
     if (!Item) {
       return res.status(404).json({
-        status: 'fail',
-        message: 'Item not found!',
+        status: "fail",
+        message: "Item not found!",
       });
     }
     res.status(200).json({
-      status: 'success',
-      message: 'Item deleted successfully',
+      status: "success",
+      message: "Item deleted successfully",
     });
   } catch (error) {
     res.status(500).json({
-      status: 'fail',
+      status: "fail",
       message: error,
     });
   }

@@ -1,12 +1,12 @@
-const Topic = require('../modules/topic');
-const User = require('../modules/user');
+const Topic = require("../modules/topic");
+const User = require("../modules/user");
 exports.getAllTopics = async (req, res) => {
   try {
-    const topics = await Topic.find();
-    res.status(200).json({ status: 'seccess', data: topics });
+    let topics = await Topic.find();
+    res.status(200).json({ status: "success", data: topics });
   } catch (error) {
     res.status(500).json({
-      status: 'fail',
+      status: "fail",
       message: error,
     });
   }
@@ -14,24 +14,23 @@ exports.getAllTopics = async (req, res) => {
 
 // create new Topic
 exports.createTopic = async (req, res) => {
-  const { topicName, adminID } = req.body;
-  const topic = new Topic({ topicName, adminID });
+  const topic = new Topic(req.body);
   try {
-    const isAdmin = await User.findById(adminID);
-    if (!isAdmin.admin) {
-      return res.status(403).json({ status: 'fail', message: 'Forbidden' });
+    const isAdmin = await User.findById(req.body.adminID);
+    if (!isAdmin.admin || !isAdmin) {
+      return res.status(403).json({ status: "fail", message: "Forbidden" });
     }
     await topic.save();
-    res.status(201).json({ status: 'success', message: 'New Topic created!' });
+    res.status(201).json({ status: "success", message: "New Topic created!" });
   } catch (error) {
     if (error.code) {
       return res
         .status(400)
-        .json({ status: 'fail', message: 'Topic Already exist' });
+        .json({ status: "fail", message: "Topic Already exist" });
     }
 
     res.status(500).json({
-      status: 'fail',
+      status: "fail",
       message: error,
     });
   }

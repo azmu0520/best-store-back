@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const itemSchema = new mongoose.Schema(
   {
@@ -8,19 +8,14 @@ const itemSchema = new mongoose.Schema(
     },
     collectionId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Collection',
-      required: true,
-    },
-    auther: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+      ref: "Collection",
       required: true,
     },
   },
   { strict: false }
 );
 
-const Item = mongoose.model('Item', itemSchema);
+const Item = mongoose.model("Item", itemSchema);
 
 module.exports = Item;
 

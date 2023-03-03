@@ -1,16 +1,25 @@
-const Collection = require('../modules/collection');
+const Collection = require("../modules/collection");
+const jwt = require("jsonwebtoken");
 
 // Get All Collections
 exports.getAllCollections = async (req, res) => {
   try {
-    const collection = await Collection.find({})
-      .populate('createdBy', ['first_name', 'last_name'])
+    let collections = await Collection.find()
+      .populate("createdBy", ["first_name", "last_name"])
       .exec();
+
+    if (req.query?.filter) {
+      collections = collections.filter((collection) =>
+        req.query?.filter === "All"
+          ? true
+          : collection?.name[0].toUpperCase() === req.query?.filter
+      );
+    }
     // const collections = await collection.populate('createdBy');
-    res.status(200).json({ status: 'success', data: collection });
+    res.status(200).json({ status: "success", data: collections });
   } catch (error) {
     res.status(500).json({
-      status: 'fail',
+      status: "fail",
       message: error,
     });
   }
@@ -18,23 +27,40 @@ exports.getAllCollections = async (req, res) => {
 
 // Get a user related collection
 exports.getSingleCollection = async (req, res) => {
+  const token = req.header("auth-token");
+  const verified = jwt.verify(token, process.env.JWT_HACK);
   try {
-    const collection = await Collection.findById(req.params._id)
-      .populate('items')
+    const populatedCollection = await Collection.find()
+      .populate("createdBy", ["first_name", "last_name"])
       .exec();
+    let collection = populatedCollection.filter(
+      ({ createdBy }) => createdBy._id == verified.id
+    );
     if (!collection) {
       return res.status(404).json({
-        status: 'fail',
-        message: 'Collection not found!',
+        status: "fail",
+        message: "Collection not found!",
       });
     }
+    if (req.query?.filter) {
+      collection = collection.filter((item) =>
+        req.query?.filter === "All"
+          ? true
+          : item?.name[0].toUpperCase() === req.query?.filter
+      );
+    }
+    if (req.query?.sort) {
+      collection = collection.filter((item) =>
+        req.query?.sort === "All" ? true : item?.topic === req.query?.sort
+      );
+    }
     res.status(200).json({
-      status: 'success',
+      status: "success",
       data: collection,
     });
   } catch (error) {
     res.status(500).json({
-      status: 'fail',
+      status: "fail",
       message: error,
     });
   }
@@ -43,23 +69,25 @@ exports.getSingleCollection = async (req, res) => {
 // create new Collection
 exports.createCollection = async (req, res) => {
   const { name, topic, image, description, createdBy } = req.body;
+  const token = req.header("auth-token");
+  const verified = jwt.verify(token, process.env.JWT_HACK);
   const collection = new Collection({
     name,
     topic,
     image,
     description,
-    createdBy,
+    createdBy: verified.id,
   });
   try {
     await (
       await collection.save()
-    ).populate('createdBy', ['first_name', 'last_name']);
+    ).populate("createdBy", ["first_name", "last_name"]);
     res
       .status(201)
-      .json({ status: 'success', message: 'Collection successfully created' });
+      .json({ status: "success", message: "Collection successfully created" });
   } catch (error) {
     res.status(500).json({
-      status: 'fail',
+      status: "fail",
       message: error,
     });
   }
@@ -73,22 +101,21 @@ exports.editCollection = async (req, res) => {
       req.params._id,
       req.body,
       { new: true }
-    )
-      .populate('createdBy', ['first_name', 'last_name'])
-      .exec();
+    );
+
     if (!editedCollection) {
       return res.status(404).json({
-        status: 'fail',
-        message: 'Collection not found!',
+        status: "fail",
+        message: "Collection not found!",
       });
     }
     res.status(200).json({
-      status: 'success',
-      data: editedCollection,
+      status: "success",
+      message: "Collection successfully edited !",
     });
   } catch (error) {
     res.status(500).json({
-      status: 'fail',
+      status: "fail",
       message: error,
     });
   }
@@ -101,17 +128,17 @@ exports.deleteCollection = async (req, res) => {
     const collection = await Collection.findByIdAndDelete(req.params._id);
     if (!collection) {
       return res.status(404).json({
-        status: 'fail',
-        message: 'Collection not found!',
+        status: "fail",
+        message: "Collection not found!",
       });
     }
     res.status(200).json({
-      status: 'success',
-      message: 'Collection deleted successfully',
+      status: "success",
+      message: "Collection deleted successfully",
     });
   } catch (error) {
     res.status(500).json({
-      status: 'fail',
+      status: "fail",
       message: error,
     });
   }

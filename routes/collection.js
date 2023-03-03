@@ -1,19 +1,19 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const auth = require('../controllers/verifiedToken');
+const auth = require("../controllers/verifiedToken");
 const {
   getAllCollections,
   createCollection,
   deleteCollection,
   editCollection,
   getSingleCollection,
-} = require('../controllers/collection');
+} = require("../controllers/collection");
 
-router.route('/').get(getAllCollections).post(auth, createCollection);
+router.route("/").get(getAllCollections).post(auth, createCollection);
 
+router.route("/user").get(auth, getSingleCollection);
 router
-  .route('/:_id')
-  .get(auth, getSingleCollection)
+  .route("/:_id")
   .patch(auth, editCollection)
   .delete(auth, deleteCollection);
 

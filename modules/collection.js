@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const collectionSchema = new mongoose.Schema(
   {
@@ -21,10 +21,13 @@ const collectionSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    filter: {
+      type: String,
+      default: "All",
+    },
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
-      required: true,
+      ref: "User",
     },
   },
   {
@@ -32,6 +35,6 @@ const collectionSchema = new mongoose.Schema(
   }
 );
 
-const Collection = mongoose.model('Collection', collectionSchema);
+const Collection = mongoose.model("Collection", collectionSchema);
 
 module.exports = Collection;

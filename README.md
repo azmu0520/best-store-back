@@ -31,6 +31,11 @@
         <br /> Method='GET' 
     </li>
     <li>
+        Get a user's collection list with <a href="/" >MAIN_ULR/api/user/collections</a>
+        <br /> header={"auth-token":"token"}
+        <br /> Method='GET' 
+    </li>
+    <li>
         Create a collection <a href="/">MAIN_ULR/api/collections</a>. 
         <br> It requires name , short_description , topic , createdBy: userId and optional Image
         <br /> header={"auth-token":"token"}
