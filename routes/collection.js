@@ -8,7 +8,7 @@ const {
   editCollection,
   getSingleCollection,
 } = require("../controllers/collection");
-
+// ready to deploy
 router.route("/").get(getAllCollections).post(auth, createCollection);
 
 router.route("/user").get(auth, getSingleCollection);
